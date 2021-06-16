@@ -17,17 +17,18 @@ class ViewController: UIViewController {
         print("===== Task 1 =====\n")
         
         func decimal(x: Float) -> Int {
-            var i = x
-            while i > 1 {
-                i = i - 1
-            }
-            return Int(i*10)
+//            var i = x
+//            while i > 1 {
+//                i = i - 1
+//            }
+//            return Int(i*10)
+            return Int(round((x - Float(Int(x))) * 10))
         }
         
         let num1: Float = 3.4
         let num2: Float = 7.3
-        let num3: Float = 6.8
-        let num4: Float = 4.5
+        let num3: Float = 6.2
+        let num4: Float = 4.1
         
         let sumFull = Int(num1) + Int(num2) + Int(num3) + Int(num4)
         let multFull = Int(num1) * Int(num2) * Int(num3) * Int(num4)
@@ -49,6 +50,15 @@ class ViewController: UIViewController {
         } else {
             print("Number \(num5) is not even")
         }
+        
+        // ================== test
+//        print("\n===== Test =====\n")
+//
+//        var numTest: Float = 4.1
+//        var numTest2 = round(10 * numTest) / 10
+//        var numTest3 = Int(round((numTest - Float(Int(numTest))) * 10))
+//        print(numTest, numTest2, numTest3)
+        
     }
 
 
