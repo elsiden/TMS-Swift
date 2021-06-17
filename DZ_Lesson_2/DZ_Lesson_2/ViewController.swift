@@ -24,8 +24,6 @@ class ViewController: UIViewController {
 //                i = i - 1
 //            }
 //            return Int(i*10)
-//            ==================================
-//            return Int(x - Float(Int(x))) * 10
         }
         
         let num1: Float = 3.4
