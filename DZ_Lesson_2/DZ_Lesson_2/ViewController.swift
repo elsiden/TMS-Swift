@@ -17,12 +17,15 @@ class ViewController: UIViewController {
         print("===== Task 1 =====\n")
         
         func decimal(x: Float) -> Int {
+            return Int(round((x - Float(Int(x))) * 10))
+//            ==================================
 //            var i = x
 //            while i > 1 {
 //                i = i - 1
 //            }
 //            return Int(i*10)
-            return Int(round((x - Float(Int(x))) * 10))
+//            ==================================
+//            return Int(x - Float(Int(x))) * 10
         }
         
         let num1: Float = 3.4
