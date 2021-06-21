@@ -19,26 +19,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        func Swap(firstTuple: inout FIZ, secondTuple: inout FIZ) {
+        func swap(firstTuple: inout FIZ, secondTuple: inout FIZ) {
             let extra: FIZ = firstTuple
             firstTuple = secondTuple
             secondTuple = extra
         }
         
-        func Check(checkParam: String) -> String {
+        func check(checkParam: String) -> String {
             return Int(checkParam) != nil ? checkParam : "nil" // усвоить тернарный оператор
         }
         
-        func InfoStudent(student: Student) {
+        func infoStudent(student: Student) {
             let studentCar: String
             let studentKR: String
             
-            if let car = student.numberCar {
+            if let _ = student.numberCar {
                 studentCar = "Yes"
             } else {
                 studentCar = "No"
             }
-            if let kr = student.mark {
+            if let _ = student.mark {
                 studentKR = "Yes"
             } else {
                 studentKR = "No"
@@ -47,12 +47,12 @@ class ViewController: UIViewController {
             print("Info: Student - \(student.name ?? "___"), Have car - \(studentCar ?? "___"), Number of car - \(student.numberCar ?? 0), Presence on KR - \(studentKR ?? "___"), Mark on KR - \(student.mark ?? 0)")
         }
         
-        func Task1() {
+        func task1() {
             print("=== Task 1 ===\n")
             print("Max fiz Vanya:\npush-ups: \(fizVanya.pushUps)\npull-ups: \(fizVanya.pullUps)\nsquats: \(fizVanya.squats)\n")
         }
         
-        func Task2() {
+        func task2() {
             print("=== Task 2 ===\n")
             
             print("Max fiz Vanya:")
@@ -61,22 +61,22 @@ class ViewController: UIViewController {
             print("index: \(fizVanya.2) && param: \(fizVanya.squats)\n")
         }
         
-        func Task3() {
+        func task3() {
             print("=== Task 3 ===\n")
             
-            Swap(firstTuple: &fizVanya, secondTuple: &fizFriend)
+            swap(firstTuple: &fizVanya, secondTuple: &fizFriend)
             print(fizVanya)
             print("\(fizFriend)\n")
         }
         
-        func Task4(firstTuple: FIZ, secondTuple: FIZ) {
+        func task4(firstTuple: FIZ, secondTuple: FIZ) {
             print("=== Task 4 ===\n")
             
             let diffTuple: FIZ = (fizVanya.pushUps - fizFriend.pushUps, fizVanya.pullUps - fizFriend.pullUps, fizVanya.squats - fizFriend.squats)
             print("\(diffTuple)\n")
         }
         
-        func Task5() {
+        func task5() {
             print("=== Task 5 ===\n")
             
             let str1 = "2"
@@ -103,31 +103,31 @@ class ViewController: UIViewController {
             summ += Int(str5) ?? 0
             summ += Int(str6) ?? 0
 
-            print("\(Check(checkParam: str1)) + \(Check(checkParam: str2)) + \(Check(checkParam: str3)) + \(Check(checkParam: str4)) + \(Check(checkParam: str5)) + \(Check(checkParam: str6))\n")
+            print("\(check(checkParam: str1)) + \(check(checkParam: str2)) + \(check(checkParam: str3)) + \(check(checkParam: str4)) + \(check(checkParam: str5)) + \(check(checkParam: str6))\n")
         }
         
-        func Task6() {
+        func task6() {
             print("=== Task 6 ===\n")
             
             let codeTuple: CodeTuple = (Int.random(in: 175..<325), "1. Message", nil) // такой диапазон использовал для возможности показа else
             print("1. \(codeTuple.code)")
             
             if codeTuple.code >= 200 && codeTuple.code < 300 {
-                print(codeTuple.message!)
+                print(codeTuple.message ?? "nil")
             } else {
                 print(codeTuple.message ?? "Error")
             }
             
             let messageTuple: MessageTuple = (nil, "2. Error")
             if let message = messageTuple.message {
-                print(messageTuple.message!)
+                print(message)
             } else {
                 print(messageTuple.errorMessage!)
             }
             print()
         }
         
-        func Task7() {
+        func task7() {
             print("=== Task 7 ===\n")
             
             let student1: Student
@@ -152,15 +152,15 @@ class ViewController: UIViewController {
             student4 = ("Nikita", nil, 8)
             student5 = ("Vlad", 3456, 9)
             
-            InfoStudent(student: student1)
-            InfoStudent(student: student2)
-            InfoStudent(student: student3)
-            InfoStudent(student: student4)
-            InfoStudent(student: student5)
+            infoStudent(student: student1)
+            infoStudent(student: student2)
+            infoStudent(student: student3)
+            infoStudent(student: student4)
+            infoStudent(student: student5)
             print()
         }
         
-        func Task8() {
+        func task8() {
             print("=== Task 8 ===\n")
             
             let optInt: OptionalInt = (1, nil, 3, nil, 5)
@@ -169,19 +169,19 @@ class ViewController: UIViewController {
             var summQ = 0
             
             if let number = optInt.int1 {
-                summBin += optInt.int1!
+                summBin += number
             }
             if let number = optInt.int2 {
-                summBin += optInt.int2!
+                summBin += number
             }
             if let number = optInt.int3 {
-                summBin += optInt.int3!
+                summBin += number
             }
             if let number = optInt.int4 {
-                summBin += optInt.int4!
+                summBin += number
             }
             if let number = optInt.int5 {
-                summBin += optInt.int5!
+                summBin += number
             }
             
             if optInt.int1 != nil {
@@ -212,14 +212,14 @@ class ViewController: UIViewController {
         var fizVanya: FIZ = (50, 13, 70)
         var fizFriend: FIZ = (45, 15, 60)
         
-        Task1()
-        Task2()
-        Task3()
-        Task4(firstTuple: fizVanya, secondTuple: fizFriend)
-        Task5()
-        Task6()
-        Task7()
-        Task8()
+        task1()
+        task2()
+        task3()
+        task4(firstTuple: fizVanya, secondTuple: fizFriend)
+        task5()
+        task6()
+        task7()
+        task8()
         
         
         
