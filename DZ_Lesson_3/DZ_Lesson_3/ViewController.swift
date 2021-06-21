@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         }
         
         func check(checkParam: String) -> String {
-            return Int(checkParam) != nil ? checkParam : "nil" // усвоить тернарный оператор
+            return Int(checkParam) != nil ? checkParam : "nil"
         }
         
         func infoStudent(student: Student) {
