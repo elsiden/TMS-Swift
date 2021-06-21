@@ -62,7 +62,7 @@ class ViewController: UIViewController {
 //        var family: String = "Klishevich"
 //        var otch: String? = nil //"Aleksandrovich"
 //
-////        print("Hello, \(name) \(family) \(otch!)") // без ! будет Optional(Aleksandrovich)
+//        print("Hello, \(name) \(family) \(otch!)") // без ! будет Optional(Aleksandrovich)
 //        print("Hello, \(name) \(family) \(otch ?? "")") // Если значение nil, то ничего не вставится, если не nil, то подставится нужное. Учитывать пробел появляющийся без подстановки
         
         
@@ -73,7 +73,7 @@ class ViewController: UIViewController {
 //        }
 //
 //        if let nonOptOtch = otch { // если otch != nil
-//            print(nonOptOtch) // при попадании делает String
+//            print(nonOptOtch) // при попадании делает String распаршенный
 //        } else {
 //            print("otch - nil")
 //        }
@@ -127,7 +127,7 @@ class ViewController: UIViewController {
 //        let isIOSDev: Bool = human.2
 //        let weight: Float = human.3
         
-//        let (name, age, isIOSDev, weight) = human
+//        let (name, age, isIOSDev, weight) = human // не кортеж
 //        print(name)
 //        print(age)
 //        print(isIOSDev)
