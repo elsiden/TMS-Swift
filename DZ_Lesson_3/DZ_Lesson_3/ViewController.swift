@@ -44,7 +44,7 @@ class ViewController: UIViewController {
                 studentKR = "No"
             }
             
-            print("Info: Student - \(student.name ?? "___"), Have car - \(studentCar ?? "___"), Number of car - \(student.numberCar ?? 0), Presence on KR - \(studentKR ?? "___"), Mark on KR - \(student.mark ?? 0)")
+            print("Info: Student - \(student.name ?? "___"), Have car - \(studentCar), Number of car - \(student.numberCar ?? 0), Presence on KR - \(studentKR), Mark on KR - \(student.mark ?? 0)")
         }
         
         func task1() {
