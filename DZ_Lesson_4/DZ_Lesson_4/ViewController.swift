@@ -63,17 +63,18 @@ func swap(where num1: inout Double, and num2: inout Double) {
     num2 = c
 }
 
-func mealInfo(where breakfast: Int) {
-//    let n = 10
+func mealInfo(where breakfast: Int, and ostNorm: inout Int) {
+    ostNorm -= breakfast
     let protein = 0.4
     let vitA = 0.25
     let vitC = 0.35
     
-    let ostProt = String(format: "%g", 1 - protein * Double(breakfast))
-    let ostA = String(format: "%g", 1 - vitA * Double(breakfast))
-    let ostC = String(format: "%g", 1 - vitC * Double(breakfast))
+    let ostProt = String(format: "%g", Double(ostNorm) * protein)
+    let ostA = String(format: "%g", Double(ostNorm) * vitA)
+    let ostC = String(format: "%g", Double(ostNorm) * vitC)
     
-    print(ostProt, ostA, ostC)
+    print("Ost protein: \(ostProt), ost vitA: \(ostA), ost vitC: \(ostC)")
+   
 }
 
 class ViewController: UIViewController {
@@ -133,8 +134,9 @@ class ViewController: UIViewController {
         print("\n=== Task 4 Dop ===\n")
         
         let breakfast = 2
-        mealInfo(where: breakfast)
-        
+        var ostNorm = 10
+        mealInfo(where: breakfast, and: &ostNorm)
+        mealInfo(where: breakfast, and: &ostNorm)
         
         
         
