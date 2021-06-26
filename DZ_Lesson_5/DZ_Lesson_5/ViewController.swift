@@ -103,11 +103,11 @@ func task4() {
     var countChar = 0
     for value in str {
         switch value {
-        case "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z":
+        case "a"..."z":
             countLetter += 1
-        case "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "№", ":", ".", ";", "]", "[", "?", "<", ">":
+        case "!", ":", ".", ";", "?", ",":
             countChar += 1
-        case "1", "2", "3", "4", "5", "6", "7", "8", "9", "0":
+        case "0"..."9":
             countNumbers += 1
         default:
             break
@@ -154,7 +154,7 @@ func changeSymbols(where str: inout String) -> String {
             str1 += value.lowercased()
         case "a", "e", "i", "o", "u", "y":
             str1 += value.uppercased()
-        case "!", ":", ".", ";", "?":
+        case "!", ":", ".", ";", "?", ",":
             break
         case "1":
             str1 += "one"
@@ -229,14 +229,14 @@ class ViewController: UIViewController {
         
         
         
-//        task1()
-//        task2()
-//        task3()
-//        task4()
-//        task5()
-//        task6()
-//        task7()
-//        task8()
+        task1()
+        task2()
+        task3()
+        task4()
+        task5()
+        task6()
+        task7()
+        task8()
         
         
         
