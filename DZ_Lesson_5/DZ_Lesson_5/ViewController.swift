@@ -128,14 +128,14 @@ func task5() {
 //    print(masTask5)
     
     let numbers = "12345"
-    print(transStringToMas(where: numbers))
+    print(transStringToMas2(where: numbers))
 }
 
 func reverseMas(where mas: [Int]) -> [Int] {
     return mas.reversed()
 }
 
-func transStringToMas(where string: String) -> [Int] {
+func transStringToMas1(where string: String) -> [Int] {
     var mas: [Int] = []
     
     for value in string {
@@ -146,6 +146,26 @@ func transStringToMas(where string: String) -> [Int] {
 //    return mas.reversed()
 //    return mas
     return reverseMas(where: mas)
+}
+
+func task51() {
+    print("\n=== Task 5.1 ===\n")
+    
+//    var masTask5 = [1, 2, 3, 4, 5]
+//    masTask5 = reverseMas(where: masTask5)
+//    print(masTask5)
+    
+    let numbers = "12345"
+    print(transStringToMas2(where: numbers))
+}
+
+func transStringToMas2(where string: String) -> [String] {
+    var mas: [String] = []
+    
+    for value in string {
+        mas.insert(String(value), at: 0)
+    }
+    return mas
 }
 
 func task6() {
@@ -253,29 +273,7 @@ class ViewController: UIViewController {
         task8()
         
         
-        func task51() {
-            print("\n=== Task 5.1 ===\n")
-            
-        //    var masTask5 = [1, 2, 3, 4, 5]
-        //    masTask5 = reverseMas(where: masTask5)
-        //    print(masTask5)
-            
-            let numbers = "12345"
-            print(transStringToMas(where: numbers))
-        }
-
-        func reverseMas(where mas: [Int]) -> [Int] {
-            return mas.reversed()
-        }
-
-        func transStringToMas(where string: String) -> [String] {
-            var mas: [String] = []
-            
-            for value in string {
-                mas.insert(String(value), at: 0)
-            }
-            return mas
-        }
+        
         
         
         
