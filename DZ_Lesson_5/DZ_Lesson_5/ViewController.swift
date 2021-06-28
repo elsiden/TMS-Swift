@@ -81,6 +81,8 @@ func task2() {
 }
 
 func task3() {
+    print("\n=== Task 3 ===\n")
+    
     let alphabet = "abcdefghijklmnopqrstuvwxyz"
     var outAlphabet = ""
     var masAlphabet: [String] = []
@@ -97,6 +99,8 @@ func task3() {
 }
 
 func task4() {
+    print("\n=== Task 4 ===\n")
+    
     let str = "fjgfgagdfgagfjagff...,874187461864182368jwehqgf,.,jgfjhagdsft.,.64832rgjhgfy862.,f8teuwfgtuyewgfygefugweufygugfjgfgagdfgagfjagff...,874187461864182368jwehqgf,.,jgfjhagdsft.,.64832rgjhgfy862.,f8teuwfgtuyewgfygefugweufygug"
     var countLetter = 0
     var countNumbers = 0
@@ -117,6 +121,8 @@ func task4() {
 }
 
 func task5() {
+    print("\n=== Task 5 ===\n")
+    
 //    var masTask5 = [1, 2, 3, 4, 5]
 //    masTask5 = reverseMas(where: masTask5)
 //    print(masTask5)
@@ -129,19 +135,22 @@ func reverseMas(where mas: [Int]) -> [Int] {
     return mas.reversed()
 }
 
-func transStringToMas(where string: String) -> [String] {
-    var mas: [String] = []
+func transStringToMas(where string: String) -> [Int] {
+    var mas: [Int] = []
     
     for value in string {
-//        mas.append(String(value))
-        mas.insert(String(value), at: 0)
+//        mas.append(Int(value))
+//        mas.insert(String(value), at: 0)
     }
 //    reverseMas(where: Int(mas)) // вопрос
 //    return mas.reversed()
-    return mas
+//    return mas
+    return reverseMas(where: mas)
 }
 
 func task6() {
+    print("\n=== Task 6 ===\n")
+    
     var str = "Hello, 9 7 1"
     print(changeSymbols(where: &str))
 }
@@ -187,6 +196,8 @@ func changeSymbols(where str: inout String) -> String {
 }
 
 func task7() {
+    print("\n=== Task 7 ===\n")
+    
     let masNumbers = [2, 3, 1, 6, 7, 8, 9, 4, 0, 5]
     print(findMasMAx(where: masNumbers))
     
@@ -203,6 +214,8 @@ func findMasMAx(where mas: [Int]) -> Int {
 }
 
 func task8() {
+    print("\n=== Task 8 ===\n")
+    
     let masNumbers = [2, 3, 1, 6, 7, 8, 9, 4, 0, 5]
     print(evenNotEven(where: masNumbers))
 }
@@ -234,12 +247,35 @@ class ViewController: UIViewController {
         task3()
         task4()
         task5()
+        task51()
         task6()
         task7()
         task8()
         
         
-        
+        func task51() {
+            print("\n=== Task 5.1 ===\n")
+            
+        //    var masTask5 = [1, 2, 3, 4, 5]
+        //    masTask5 = reverseMas(where: masTask5)
+        //    print(masTask5)
+            
+            let numbers = "12345"
+            print(transStringToMas(where: numbers))
+        }
+
+        func reverseMas(where mas: [Int]) -> [Int] {
+            return mas.reversed()
+        }
+
+        func transStringToMas(where string: String) -> [String] {
+            var mas: [String] = []
+            
+            for value in string {
+                mas.insert(String(value), at: 0)
+            }
+            return mas
+        }
         
         
         
