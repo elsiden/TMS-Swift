@@ -24,11 +24,13 @@ class Group {
     }
     
     func removeBadStudent(where mark: Float) {
-        for index in stride(from: self.students.endIndex - 1, through: self.students.startIndex, by: -1) {
-            if self.students[index].avgMark < mark {
-                self.students.remove(at: index)
-            }
-        }
+//        for index in stride(from: self.students.endIndex - 1, through: self.students.startIndex, by: -1) {
+//            if self.students[index].avgMark < mark {
+//                self.students.remove(at: index)
+//            }
+//        }
+        
+        self.students = self.students.filter() { value in value.avgMark > mark }
         print()
         printGroupStudents()
     }
