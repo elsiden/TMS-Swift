@@ -14,7 +14,7 @@ class Human {
     let age: Int
     let weight: Float
     
-    init(firstName: String, lastName: String, surName: String? = nil, age: Int, weight: Float) {
+    init(firstName: String, lastName: String, surName: String? = nil, age: Int, weight: Float) { // нужен для того чтобы знать точно сколько памяти занимать в любом случае
         self.firstName = firstName
         self.lastName = lastName
         self.surName = surName
