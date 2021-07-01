@@ -24,15 +24,6 @@ class ViewController: UIViewController {
         
         group1.printGroupStudents()
         group1.removeBadStudent(where: 8.0)
-        
-//        var mas = [1, 2, 3, 4, 5]
-        
-//        let mas1 = mas.reversed().map { value in if value }
-//        print(mas1)
-        
-        
-        
-        
     }
 }
 
