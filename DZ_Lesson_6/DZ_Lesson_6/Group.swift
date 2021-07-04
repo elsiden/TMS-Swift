@@ -16,6 +16,17 @@ class Group {
         self.students        = students
     }
     
+//    init(numberGroup: Int, students: [Student] = []) {
+//        self.numberGroup     = numberGroup
+//        self.students        = students
+//    }
+    
+    
+//    var students: [Student] = []
+//    init(numberGroup: Int) {
+//        self.numberGroup = numberGroup
+//    }
+    
     func printGroupStudents() {
         print("Group number \(self.numberGroup)\n")
         for value in self.students {
