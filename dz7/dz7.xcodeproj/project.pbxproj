@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F1D68EEC2693505B00B8FC5B /* Essence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D68EEB2693505B00B8FC5B /* Essence.swift */; };
+		F19CD05726937ACE00AE4B29 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD04B26937ACE00AE4B29 /* Dog.swift */; };
+		F19CD05826937ACE00AE4B29 /* Monkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD04C26937ACE00AE4B29 /* Monkey.swift */; };
+		F19CD05926937ACE00AE4B29 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD04D26937ACE00AE4B29 /* Human.swift */; };
+		F19CD05A26937ACE00AE4B29 /* Crocodile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD04E26937ACE00AE4B29 /* Crocodile.swift */; };
+		F19CD05B26937ACE00AE4B29 /* Giraffe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD04F26937ACE00AE4B29 /* Giraffe.swift */; };
+		F19CD05C26937ACE00AE4B29 /* Essence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD05026937ACE00AE4B29 /* Essence.swift */; };
+		F19CD05D26937ACE00AE4B29 /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD05226937ACE00AE4B29 /* Transport.swift */; };
+		F19CD05E26937ACE00AE4B29 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD05326937ACE00AE4B29 /* Car.swift */; };
+		F19CD05F26937ACE00AE4B29 /* Helicopter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD05426937ACE00AE4B29 /* Helicopter.swift */; };
+		F19CD06026937ACE00AE4B29 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD05526937ACE00AE4B29 /* Ship.swift */; };
+		F19CD06126937ACE00AE4B29 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19CD05626937ACE00AE4B29 /* Plane.swift */; };
 		F1E14DEC269235EB00CDABAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14DEB269235EB00CDABAD /* AppDelegate.swift */; };
 		F1E14DEE269235EB00CDABAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14DED269235EB00CDABAD /* SceneDelegate.swift */; };
 		F1E14DF0269235EB00CDABAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14DEF269235EB00CDABAD /* ViewController.swift */; };
@@ -18,20 +28,20 @@
 		F1E14E042692393300CDABAD /* Dancer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E032692393300CDABAD /* Dancer.swift */; };
 		F1E14E0626923A7D00CDABAD /* Singer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E0526923A7D00CDABAD /* Singer.swift */; };
 		F1E14E0A26923BEE00CDABAD /* Painter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E0926923BEE00CDABAD /* Painter.swift */; };
-		F1E14E0D269257E700CDABAD /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E0C269257E700CDABAD /* Transport.swift */; };
-		F1E14E0F26925A4200CDABAD /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E0E26925A4200CDABAD /* Plane.swift */; };
-		F1E14E1126925A5F00CDABAD /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E1026925A5F00CDABAD /* Ship.swift */; };
-		F1E14E1326925A7100CDABAD /* Helicopter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E1226925A7100CDABAD /* Helicopter.swift */; };
-		F1E14E1526925A8400CDABAD /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E1426925A8400CDABAD /* Car.swift */; };
-		F1E14E1826927A4400CDABAD /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E1726927A4400CDABAD /* Human.swift */; };
-		F1E14E1A26927A5F00CDABAD /* Crocodile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E1926927A5F00CDABAD /* Crocodile.swift */; };
-		F1E14E1C26927A7300CDABAD /* Monkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E1B26927A7300CDABAD /* Monkey.swift */; };
-		F1E14E1E26927A8800CDABAD /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E1D26927A8800CDABAD /* Dog.swift */; };
-		F1E14E2026927AA800CDABAD /* Giraffe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E14E1F26927AA800CDABAD /* Giraffe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F1D68EEB2693505B00B8FC5B /* Essence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Essence.swift; path = ../../../../Essence.swift; sourceTree = "<group>"; };
+		F19CD04B26937ACE00AE4B29 /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		F19CD04C26937ACE00AE4B29 /* Monkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monkey.swift; sourceTree = "<group>"; };
+		F19CD04D26937ACE00AE4B29 /* Human.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
+		F19CD04E26937ACE00AE4B29 /* Crocodile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Crocodile.swift; sourceTree = "<group>"; };
+		F19CD04F26937ACE00AE4B29 /* Giraffe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Giraffe.swift; sourceTree = "<group>"; };
+		F19CD05026937ACE00AE4B29 /* Essence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Essence.swift; sourceTree = "<group>"; };
+		F19CD05226937ACE00AE4B29 /* Transport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transport.swift; sourceTree = "<group>"; };
+		F19CD05326937ACE00AE4B29 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		F19CD05426937ACE00AE4B29 /* Helicopter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helicopter.swift; sourceTree = "<group>"; };
+		F19CD05526937ACE00AE4B29 /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		F19CD05626937ACE00AE4B29 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		F1E14DE8269235EB00CDABAD /* dz7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dz7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E14DEB269235EB00CDABAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1E14DED269235EB00CDABAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,16 +54,6 @@
 		F1E14E032692393300CDABAD /* Dancer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dancer.swift; sourceTree = "<group>"; };
 		F1E14E0526923A7D00CDABAD /* Singer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singer.swift; sourceTree = "<group>"; };
 		F1E14E0926923BEE00CDABAD /* Painter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painter.swift; sourceTree = "<group>"; };
-		F1E14E0C269257E700CDABAD /* Transport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Transport.swift; path = ../../../../Transport.swift; sourceTree = "<group>"; };
-		F1E14E0E26925A4200CDABAD /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Plane.swift; path = ../../../../Plane.swift; sourceTree = "<group>"; };
-		F1E14E1026925A5F00CDABAD /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Ship.swift; path = ../../../../Ship.swift; sourceTree = "<group>"; };
-		F1E14E1226925A7100CDABAD /* Helicopter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Helicopter.swift; path = ../../../../Helicopter.swift; sourceTree = "<group>"; };
-		F1E14E1426925A8400CDABAD /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Car.swift; path = ../../../../Car.swift; sourceTree = "<group>"; };
-		F1E14E1726927A4400CDABAD /* Human.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Human.swift; path = ../../../../Human.swift; sourceTree = "<group>"; };
-		F1E14E1926927A5F00CDABAD /* Crocodile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Crocodile.swift; path = ../../../../Crocodile.swift; sourceTree = "<group>"; };
-		F1E14E1B26927A7300CDABAD /* Monkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Monkey.swift; path = ../../../../Monkey.swift; sourceTree = "<group>"; };
-		F1E14E1D26927A8800CDABAD /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dog.swift; path = ../../../../Dog.swift; sourceTree = "<group>"; };
-		F1E14E1F26927AA800CDABAD /* Giraffe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Giraffe.swift; path = ../../../../Giraffe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +67,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F19CD04A26937ACE00AE4B29 /* task3 */ = {
+			isa = PBXGroup;
+			children = (
+				F19CD04B26937ACE00AE4B29 /* Dog.swift */,
+				F19CD04C26937ACE00AE4B29 /* Monkey.swift */,
+				F19CD04D26937ACE00AE4B29 /* Human.swift */,
+				F19CD04E26937ACE00AE4B29 /* Crocodile.swift */,
+				F19CD04F26937ACE00AE4B29 /* Giraffe.swift */,
+				F19CD05026937ACE00AE4B29 /* Essence.swift */,
+			);
+			path = task3;
+			sourceTree = "<group>";
+		};
+		F19CD05126937ACE00AE4B29 /* task2 */ = {
+			isa = PBXGroup;
+			children = (
+				F19CD05226937ACE00AE4B29 /* Transport.swift */,
+				F19CD05326937ACE00AE4B29 /* Car.swift */,
+				F19CD05426937ACE00AE4B29 /* Helicopter.swift */,
+				F19CD05526937ACE00AE4B29 /* Ship.swift */,
+				F19CD05626937ACE00AE4B29 /* Plane.swift */,
+			);
+			path = task2;
+			sourceTree = "<group>";
+		};
 		F1E14DDF269235EB00CDABAD = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +111,8 @@
 		F1E14DEA269235EB00CDABAD /* dz7 */ = {
 			isa = PBXGroup;
 			children = (
-				F1E14E1626927A1400CDABAD /* task3 */,
-				F1E14E0B2692570F00CDABAD /* task2 */,
+				F19CD05126937ACE00AE4B29 /* task2 */,
+				F19CD04A26937ACE00AE4B29 /* task3 */,
 				F1E14E0826923AB900CDABAD /* task1 */,
 				F1E14DEB269235EB00CDABAD /* AppDelegate.swift */,
 				F1E14DED269235EB00CDABAD /* SceneDelegate.swift */,
@@ -109,31 +134,6 @@
 				F1E14E0926923BEE00CDABAD /* Painter.swift */,
 			);
 			path = task1;
-			sourceTree = "<group>";
-		};
-		F1E14E0B2692570F00CDABAD /* task2 */ = {
-			isa = PBXGroup;
-			children = (
-				F1E14E0C269257E700CDABAD /* Transport.swift */,
-				F1E14E0E26925A4200CDABAD /* Plane.swift */,
-				F1E14E1026925A5F00CDABAD /* Ship.swift */,
-				F1E14E1226925A7100CDABAD /* Helicopter.swift */,
-				F1E14E1426925A8400CDABAD /* Car.swift */,
-			);
-			path = task2;
-			sourceTree = "<group>";
-		};
-		F1E14E1626927A1400CDABAD /* task3 */ = {
-			isa = PBXGroup;
-			children = (
-				F1E14E1726927A4400CDABAD /* Human.swift */,
-				F1E14E1926927A5F00CDABAD /* Crocodile.swift */,
-				F1E14E1B26927A7300CDABAD /* Monkey.swift */,
-				F1E14E1D26927A8800CDABAD /* Dog.swift */,
-				F1E14E1F26927AA800CDABAD /* Giraffe.swift */,
-				F1D68EEB2693505B00B8FC5B /* Essence.swift */,
-			);
-			path = task3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,24 +206,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E14E2026927AA800CDABAD /* Giraffe.swift in Sources */,
+				F19CD05B26937ACE00AE4B29 /* Giraffe.swift in Sources */,
+				F19CD05D26937ACE00AE4B29 /* Transport.swift in Sources */,
+				F19CD05E26937ACE00AE4B29 /* Car.swift in Sources */,
 				F1E14E042692393300CDABAD /* Dancer.swift in Sources */,
-				F1E14E0F26925A4200CDABAD /* Plane.swift in Sources */,
-				F1E14E1526925A8400CDABAD /* Car.swift in Sources */,
 				F1E14E0626923A7D00CDABAD /* Singer.swift in Sources */,
-				F1E14E1A26927A5F00CDABAD /* Crocodile.swift in Sources */,
-				F1E14E1326925A7100CDABAD /* Helicopter.swift in Sources */,
-				F1E14E1826927A4400CDABAD /* Human.swift in Sources */,
 				F1E14DF0269235EB00CDABAD /* ViewController.swift in Sources */,
 				F1E14DEC269235EB00CDABAD /* AppDelegate.swift in Sources */,
 				F1E14E002692373F00CDABAD /* Artist.swift in Sources */,
+				F19CD05826937ACE00AE4B29 /* Monkey.swift in Sources */,
+				F19CD05A26937ACE00AE4B29 /* Crocodile.swift in Sources */,
+				F19CD06126937ACE00AE4B29 /* Plane.swift in Sources */,
+				F19CD05F26937ACE00AE4B29 /* Helicopter.swift in Sources */,
 				F1E14E0A26923BEE00CDABAD /* Painter.swift in Sources */,
-				F1D68EEC2693505B00B8FC5B /* Essence.swift in Sources */,
+				F19CD05926937ACE00AE4B29 /* Human.swift in Sources */,
+				F19CD05C26937ACE00AE4B29 /* Essence.swift in Sources */,
+				F19CD06026937ACE00AE4B29 /* Ship.swift in Sources */,
+				F19CD05726937ACE00AE4B29 /* Dog.swift in Sources */,
 				F1E14DEE269235EB00CDABAD /* SceneDelegate.swift in Sources */,
-				F1E14E0D269257E700CDABAD /* Transport.swift in Sources */,
-				F1E14E1126925A5F00CDABAD /* Ship.swift in Sources */,
-				F1E14E1E26927A8800CDABAD /* Dog.swift in Sources */,
-				F1E14E1C26927A7300CDABAD /* Monkey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

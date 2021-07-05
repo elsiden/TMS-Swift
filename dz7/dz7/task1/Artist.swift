@@ -25,9 +25,9 @@ class Artist {
         print("\(self.name) \(self.surname)")
     }
     
-    func afisha(where afisha: [Artist]) {
-        for _ in afisha {
-            presentation()
+    static func afisha(where afisha: [Artist]) {
+        for value in afisha {
+            value.presentation()
         }
     }
 }

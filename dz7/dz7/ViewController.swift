@@ -15,6 +15,7 @@ func task1() {
     let afisha = [dancer, singer, painter]
     
 //        dancer.afisha(where: afisha)
+    Artist.afisha(where: afisha)
     
     for value in afisha {
         value.presentation()
