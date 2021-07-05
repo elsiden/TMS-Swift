@@ -34,46 +34,50 @@ func task2() {
     }
 }
 
+func task3() {
+    let human1 = Human(legs: 2)
+    let human2 = Human(legs: 2)
+    let crocodile1 = Crocodile(legs: 4)
+    let crocodile2 = Crocodile(legs: 4)
+    let monkey1 = Monkey(legs: 2)
+    let monkey2 = Monkey(legs: 2)
+    let dog1 = Dog(legs: 4)
+    let dog2 = Dog(legs: 4)
+    let giraffe1 = Giraffe(legs: 4)
+    let giraffe2 = Giraffe(legs: 4)
+    
+    let masEssence = [human1, human2, crocodile1, crocodile2, monkey1, monkey2, dog1, dog2, giraffe1, giraffe2]
+    
+    var countFour = 0
+    var countAnimals = 0
+    var countEssence = 0
+    
+    for value in masEssence {
+        if value is Essence { //поместил внутрь по причине, что если что-то не СУЩЕСТВО, то и ног или живым быть не может
+            countEssence += 1
+            
+            if value.legs == 4 {
+                countFour += 1
+            }
+            
+            if value.essenceClass == "Animal" {
+                countAnimals += 1
+            }
+        }
+    }
+    print("Count of Essence - \(countEssence)\nCount of Four - \(countFour)\nCount of Animals - \(countAnimals)")
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-//        task1()
-//        task2()
+        task1()
+        task2()
+        task3()
         
-        let human1 = Human(legs: 2)
-        let human2 = Human(legs: 2)
-        let crocodile1 = Crocodile(legs: 4)
-        let crocodile2 = Crocodile(legs: 4)
-        let monkey1 = Monkey(legs: 2)
-        let monkey2 = Monkey(legs: 2)
-        let dog1 = Dog(legs: 4)
-        let dog2 = Dog(legs: 4)
-        let giraffe1 = Giraffe(legs: 4)
-        let giraffe2 = Giraffe(legs: 4)
-        
-        let masEssence = [human1, human2, crocodile1, crocodile2, monkey1, monkey2, dog1, dog2, giraffe1, giraffe2]
-        
-        var countFour = 0
-        var countAnimals = 0
-        var countEssence = 0
-        
-        for value in masEssence {
-            if value is Essence { //поместил внутрь по причине, что если что-то не СУЩЕСТВО, то и ног или живым быть не может
-                countEssence += 1
-                
-                if value.legs == 4 {
-                    countFour += 1
-                }
-                
-                if value.essenceClass == "Animal" {
-                    countAnimals += 1
-                }
-            }
-        }
-        print("Count of Essence - \(countEssence)\nCount of Four - \(countFour)\nCount of Animals - \(countAnimals)")
     }
 
 }
