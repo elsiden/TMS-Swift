@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="zJx-Ee-9UX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download-removebg" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-YT-QNP">
+                                <rect key="frame" x="70" y="160" width="243" height="339"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="AiJ-cP-7SY"/>
+                                    <constraint firstAttribute="height" constant="339" id="ytf-ea-l48"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rentlock Inc." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyA-ct-Lcr">
+                                <rect key="frame" x="70" y="517" width="246" height="54"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="h9i-YT-QNP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="160" id="4Gi-Rd-aB7"/>
+                            <constraint firstItem="ZyA-ct-Lcr" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="50" id="7f2-Eo-Fvj"/>
+                            <constraint firstAttribute="trailing" secondItem="zJx-Ee-9UX" secondAttribute="trailing" id="A4d-SR-Xe2"/>
+                            <constraint firstItem="ZyA-ct-Lcr" firstAttribute="top" secondItem="h9i-YT-QNP" secondAttribute="bottom" constant="18" id="Fa1-HA-jLl"/>
+                            <constraint firstItem="h9i-YT-QNP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="50" id="Q9b-er-sgj"/>
+                            <constraint firstItem="zJx-Ee-9UX" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="V82-se-Wcf"/>
+                            <constraint firstAttribute="bottom" secondItem="zJx-Ee-9UX" secondAttribute="bottom" id="ncR-7w-Mjg"/>
+                            <constraint firstItem="zJx-Ee-9UX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="pOb-v0-Pvq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1500" height="3000"/>
+        <image name="download-removebg" width="522" height="726"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
