@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let chessView = UIView(frame: CGRect(x: 50, y: 200, width: 320, height: 320))
+    let chessView = UIView(frame: CGRect(x: 30, y: 200, width: 320, height: 320))
     var currentView: UIView? = nil
     var fields: [UIView] = []
     var checkers: [UIView] = []
@@ -23,16 +23,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .cyan
-//        view.addSubview(chessView)
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
         view.addGestureRecognizer(panGesture)
         
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGesture(_:)))
-//        chessView.addGestureRecognizer(tapGesture)
-        
         createChessboard()
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,13 +38,13 @@ class ViewController: UIViewController {
         let rows = 8
         let columns = 8
         let squareSize = CGSize(width: 40, height: 40)
-        let xOffset = 50
+        let xOffset = 30
         let yOffset = 200
         var check = false
         
-        let squareMiniSize = CGSize(width: 20, height: 20)
-        let xOffsetMini = 10
-        let yOffsetMini = 10
+        let squareMiniSize = CGSize(width: 26, height: 26)
+        let xOffsetMini = 7
+        let yOffsetMini = 7
         var squareMiniPos: CGPoint
         var squareMini: UIView
 
@@ -80,6 +75,8 @@ class ViewController: UIViewController {
                     } else {
                         squareMini.backgroundColor = UIColor.lightGray
                     }
+                    squareMini.layer.cornerRadius = 13
+                    squareMini.layer.masksToBounds = true
                     view.addSubview(squareMini)
                     checkers.append(squareMini)
                 }
@@ -87,9 +84,6 @@ class ViewController: UIViewController {
             }
             check = !check
         }
-//        for value in fields {
-//            print(value)
-//        }
     }
     
     @objc
@@ -108,7 +102,6 @@ class ViewController: UIViewController {
             view.bringSubviewToFront(currentView!)
             currentView!.center = CGPoint(x: currentView!.center.x + translation.x, y: currentView!.center.y + translation.y)
             sender.setTranslation(.zero, in: view)
-//            print(translation)
         case .ended:
             guard currentView != nil else { return }
             if !chessView.frame.contains(currentView!.frame) {
@@ -119,42 +112,29 @@ class ViewController: UIViewController {
                 count += 1
                 if value.frame.contains(currentView!.frame) {
                     selectedField = value.frame.origin
-                    currentView!.frame.origin.x = selectedField.x + 10
-                    currentView!.frame.origin.y = selectedField.y + 10
+                    currentView!.frame.origin.x = selectedField.x + 7
+                    currentView!.frame.origin.y = selectedField.y + 7
                     count = 0
+                    for checker in checkers {
+                        if currentView!.frame.origin == checker.frame.origin {
+                            countCheckers += 1
+                            if countCheckers == 2 {
+                                currentView!.frame.origin = startPositionChangeChecker
+                                break
+                            }
+                        }
+                    }
                     break
                 } else if count == 32 {
                     count = 0
                     currentView!.frame.origin = startPositionChangeChecker
                 }
             }
-            
-            for checker in checkers {
-                if currentView!.frame.origin == checker.frame.origin {
-                    countCheckers += 1
-                    if countCheckers == 2 {
-                        currentView!.frame.origin = startPositionChangeChecker
-                        break
-                    }
-                }
-            }
             countCheckers = 0
-            
             currentView = nil
         default:
             break
         }
     }
-    
-//    @objc
-//    func tapGesture(_ sender: UITapGestureRecognizer) {
-//        let location = sender.location(in: chessView)
-//        for value in checkers {
-//            if value.frame.contains(location) {
-//                currentView = value
-//                print("add")
-//            }
-//        }
-//    }
 }
 
