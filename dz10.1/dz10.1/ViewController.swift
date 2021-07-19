@@ -92,10 +92,10 @@ class ViewController: UIViewController {
         switch sender.state {
         case .began:
             for value in checkers {
-                if value.frame.contains(self.tapPoint) {
-                    currentView = value
-                    startPositionChangeChecker = value.frame.origin
-                }
+                guard value.frame.contains(self.tapPoint) else { continue }
+                currentView = value
+                startPositionChangeChecker = value.frame.origin
+                break
             }
         case .changed:
             guard currentView != nil else { return }
@@ -104,10 +104,13 @@ class ViewController: UIViewController {
             sender.setTranslation(.zero, in: view)
         case .ended:
             guard currentView != nil else { return }
-            if !chessView.frame.contains(currentView!.frame) {
+            guard chessView.frame.contains(currentView!.frame) else {
                 currentView!.frame.origin = startPositionChangeChecker
+                return
             }
-            
+//            if !chessView.frame.contains(currentView!.frame) {
+//
+//            }
             for value in fields {
                 count += 1
                 if value.frame.contains(currentView!.frame) {
