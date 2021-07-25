@@ -8,6 +8,10 @@
 import UIKit
 
 class MainVC: UIViewController {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var startGameBtn: UIButton!
+    @IBOutlet weak var resultsBtn: UIButton!
+    @IBOutlet weak var settingsBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +21,10 @@ class MainVC: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = UIColor.clear
+        
+//        zeroButton.layer.cornerRadius = zeroButton.frame.size.width / (deviceType == .iPhone8 ? 6.0 : 2.0)
+//        let deviceType = UIDevice().type
+//        nameLabel.font = (deviceType == .iPhone8 ? nameLabel.font.withSize(35) : nameLabel.font.withSize(40))
         
     }
 
