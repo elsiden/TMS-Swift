@@ -9,6 +9,7 @@ import UIKit
 
 class ChessboardVC: UIViewController {
     var chessboard: UIView!
+    var defaultCell: UIView?
     
     var countSec: Int = 0
     var countMin: Int = 0
@@ -85,18 +86,27 @@ class ChessboardVC: UIViewController {
         let translation = sender.translation(in: chessboard)
 
         switch sender.state {
+        case .began:
+            guard let checker = sender.view else { return }
+            
+            let convertOrigin = checker.convert(checker.frame.origin, to: view)
+            defaultCell = checker.superview
+            view.addSubview(checker)
+            checker.frame.origin = convertOrigin
         case .changed:
-            guard let column = sender.view?.superview, let cellOrigin = sender.view?.frame.origin else { return }
-            chessboard.bringSubviewToFront(column)
+            guard let cellOrigin = sender.view?.frame.origin else { return }
+            
             sender.view?.frame.origin = CGPoint(x: cellOrigin.x + translation.x,
                                                 y: cellOrigin.y + translation.y)
-            
             sender.setTranslation(.zero, in: chessboard)
         case .ended:
-            let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) && $0.backgroundColor == .brown })
+            let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) &&
+                                                            $0.backgroundColor == .brown })
             
-            sender.view?.frame.origin = CGPoint(x: 5, y: 5)
+            sender.view?.frame.origin = CGPoint(x: 2, y: 2)
             guard let newCell = currentCell, newCell.subviews.isEmpty, let cell = sender.view else {
+                guard let checker = sender.view else { return }
+                defaultCell?.addSubview(checker)
                 return
             }
             

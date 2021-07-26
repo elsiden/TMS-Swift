@@ -58,15 +58,6 @@
                                     <action selector="settingsBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Isa-6K-kxA"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkers" translatesAutoresizingMaskIntoConstraints="NO" id="bUM-Zl-1Cf">
-                                <rect key="frame" x="57" y="214.5" width="300" height="150"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkers Mobile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NB-7a-AcR">
-                                <rect key="frame" x="56.5" y="159.5" width="301" height="55"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLJ-37-UeN">
                                 <rect key="frame" x="109" y="414.5" width="196" height="67"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
@@ -77,48 +68,42 @@
                                     <action selector="startGameBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="UWl-Hc-QGq"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkers" translatesAutoresizingMaskIntoConstraints="NO" id="a8s-nh-b4k">
+                                <rect key="frame" x="7" y="164.5" width="400" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkers Mobile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSp-uo-V1Y">
+                                <rect key="frame" x="56.5" y="109.5" width="301" height="55"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sRs-ii-T4I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bLJ-37-UeN" firstAttribute="width" secondItem="hP2-07-ImA" secondAttribute="width" multiplier="0.47343" id="1U0-LT-EgN"/>
-                            <constraint firstItem="2NB-7a-AcR" firstAttribute="width" secondItem="hP2-07-ImA" secondAttribute="width" multiplier="0.727053" id="1fp-Yy-kBE"/>
                             <constraint firstItem="ijz-ia-LTt" firstAttribute="top" secondItem="bLJ-37-UeN" secondAttribute="bottom" constant="50" id="2QR-F3-un0"/>
-                            <constraint firstItem="bLJ-37-UeN" firstAttribute="height" secondItem="hP2-07-ImA" secondAttribute="height" multiplier="0.0747768" id="Aqv-vD-UuY"/>
                             <constraint firstItem="bLJ-37-UeN" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Aur-5F-PuA"/>
                             <constraint firstItem="ijz-ia-LTt" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="LuM-CG-dE7"/>
-                            <constraint firstItem="ijz-ia-LTt" firstAttribute="height" secondItem="hP2-07-ImA" secondAttribute="height" multiplier="0.0524554" id="TlY-tK-rfd"/>
+                            <constraint firstItem="a8s-nh-b4k" firstAttribute="top" secondItem="HSp-uo-V1Y" secondAttribute="bottom" id="PTQ-RM-ApH"/>
                             <constraint firstAttribute="trailing" secondItem="hP2-07-ImA" secondAttribute="trailing" id="U9R-Tg-dgI"/>
+                            <constraint firstItem="a8s-nh-b4k" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="USU-V3-N0V"/>
+                            <constraint firstItem="bLJ-37-UeN" firstAttribute="top" secondItem="a8s-nh-b4k" secondAttribute="bottom" constant="50" id="UbU-x6-hxv"/>
                             <constraint firstItem="bLJ-37-UeN" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Uid-o4-W4t"/>
-                            <constraint firstItem="bUM-Zl-1Cf" firstAttribute="top" secondItem="2NB-7a-AcR" secondAttribute="bottom" id="YgK-qo-byY"/>
                             <constraint firstItem="hP2-07-ImA" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Yqx-kq-k3O"/>
                             <constraint firstAttribute="bottom" secondItem="hP2-07-ImA" secondAttribute="bottom" id="YvV-gQ-qq6"/>
-                            <constraint firstItem="2NB-7a-AcR" firstAttribute="height" secondItem="hP2-07-ImA" secondAttribute="height" multiplier="0.0613839" id="aST-fb-MEU"/>
-                            <constraint firstItem="ijz-ia-LTt" firstAttribute="width" secondItem="hP2-07-ImA" secondAttribute="width" multiplier="0.190821" id="ebX-xT-dcX"/>
-                            <constraint firstItem="bUM-Zl-1Cf" firstAttribute="height" secondItem="hP2-07-ImA" secondAttribute="height" multiplier="0.167411" id="hG4-QY-Tn7"/>
                             <constraint firstItem="fXJ-kt-e4Q" firstAttribute="top" secondItem="ijz-ia-LTt" secondAttribute="bottom" constant="50" id="j5b-ct-0HH"/>
-                            <constraint firstItem="bLJ-37-UeN" firstAttribute="top" secondItem="bUM-Zl-1Cf" secondAttribute="bottom" constant="50" id="kQK-fD-7vD"/>
+                            <constraint firstItem="HSp-uo-V1Y" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="kJk-y9-l9N"/>
                             <constraint firstItem="hP2-07-ImA" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="p7o-kQ-yia"/>
-                            <constraint firstItem="fXJ-kt-e4Q" firstAttribute="height" secondItem="hP2-07-ImA" secondAttribute="height" multiplier="0.0524554" id="pdg-rd-2bM"/>
-                            <constraint firstItem="bUM-Zl-1Cf" firstAttribute="width" secondItem="hP2-07-ImA" secondAttribute="width" multiplier="0.724638" id="rXY-dF-JmZ"/>
-                            <constraint firstItem="2NB-7a-AcR" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rgj-dh-cqg"/>
-                            <constraint firstItem="fXJ-kt-e4Q" firstAttribute="width" secondItem="hP2-07-ImA" secondAttribute="width" multiplier="0.219807" id="wl6-bf-ids"/>
-                            <constraint firstItem="bUM-Zl-1Cf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="x3t-l0-hou"/>
                             <constraint firstItem="fXJ-kt-e4Q" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xUJ-F7-vV6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a8f-aJ-KrR">
                         <barButtonItem key="backBarButtonItem" title="Menu" id="627-pq-b5F"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="nameLabel" destination="2NB-7a-AcR" id="YrJ-8I-853"/>
-                        <outlet property="resultsBtn" destination="ijz-ia-LTt" id="yqu-s3-zZs"/>
-                        <outlet property="startGameBtn" destination="bLJ-37-UeN" id="M8e-gl-rox"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.518518518518519" y="122.22222222222221"/>
+            <point key="canvasLocation" x="15.199999999999999" y="120.98950524737631"/>
         </scene>
     </scenes>
     <resources>

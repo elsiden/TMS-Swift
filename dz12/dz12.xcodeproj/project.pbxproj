@@ -70,22 +70,38 @@
 		F1385D1126A9878A0001804D /* dz12 */ = {
 			isa = PBXGroup;
 			children = (
+				F13AAB7C26AF02FF00BCE05E /* ViewControllers */,
+				F13AAB7B26AF02D900BCE05E /* Storyboards */,
 				F1385D1226A9878A0001804D /* AppDelegate.swift */,
 				F1385D1426A9878A0001804D /* SceneDelegate.swift */,
-				F1385D1626A9878A0001804D /* ChessboardVC.swift */,
-				F11BF90026ADEB6300C06EDA /* Main.storyboard */,
-				F1385D1826A9878A0001804D /* Chessboard.storyboard */,
 				F1385D1B26A9878C0001804D /* Assets.xcassets */,
 				F1385D1D26A9878C0001804D /* LaunchScreen.storyboard */,
 				F1385D2026A9878C0001804D /* Info.plist */,
-				F163A96D26AD78A70009B279 /* MainVC.swift */,
-				F163A96F26AD970A0009B279 /* Results.storyboard */,
-				F163A97126AD973A0009B279 /* ResultsVC.swift */,
-				F163A97326AD9D400009B279 /* SettingsVC.swift */,
-				F163A97526AD9D570009B279 /* Settings.storyboard */,
 				F11BF8FE26ADE4F000C06EDA /* Devices.swift */,
 			);
 			path = dz12;
+			sourceTree = "<group>";
+		};
+		F13AAB7B26AF02D900BCE05E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F11BF90026ADEB6300C06EDA /* Main.storyboard */,
+				F1385D1826A9878A0001804D /* Chessboard.storyboard */,
+				F163A96F26AD970A0009B279 /* Results.storyboard */,
+				F163A97526AD9D570009B279 /* Settings.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F13AAB7C26AF02FF00BCE05E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1385D1626A9878A0001804D /* ChessboardVC.swift */,
+				F163A96D26AD78A70009B279 /* MainVC.swift */,
+				F163A97126AD973A0009B279 /* ResultsVC.swift */,
+				F163A97326AD9D400009B279 /* SettingsVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
