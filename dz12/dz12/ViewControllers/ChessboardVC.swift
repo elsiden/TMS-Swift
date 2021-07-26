@@ -35,6 +35,12 @@ class ChessboardVC: UIViewController {
         createChessboard()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        timer?.invalidate()
+        timer = nil
+    }
+    
     override func viewDidLayoutSubviews() {
         chessboard.center = view.center
     }
