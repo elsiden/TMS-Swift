@@ -99,29 +99,16 @@ class ChessboardVC: UIViewController {
     }
     
     @objc func timerFunc() {
-//        var sec: String
-//        var min: String
+        var sec: String
+        var min: String
         countSec += 1
-//        if countSec == 60 {
-//            countSec = 0
-//            countMin += 1
-//        }
-//        label.text = "\(countMin):\(countSec)"
-//        if countSec < 10 {
-//            label.text = "0\(countMin):0\(countSec)"
-//        } else {
-//            label.text = "0\(countMin):\(countSec)"
-//        }
-//        if countSec == 60 {
-//            countMin += 1
-//            if countMin < 10 {
-//                label.text = "0\(countMin):0\(countSec)"
-//            }
-//        }
-//        sec = countSec < 10 ? ": 0\(countSec)" : ": \(countSec)"
-//        countMin = countSec == 60 ? (+1, countSec = 0) : +0
-//        min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
-//        label.text = min + sec
+        if countSec == 60 {
+            countSec = 0
+            countMin += 1
+        }
+        sec = countSec < 10 ? ": 0\(countSec)" : ": \(countSec)"
+        min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
+        label.text = min + sec
     }
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {
