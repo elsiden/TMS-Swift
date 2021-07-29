@@ -19,7 +19,7 @@ class ChessboardVC: UIViewController {
     var countSec: Int = 0
     var countMin: Int = 0
     var timer: Timer?
-    var label: UILabel!
+    var labelTimer: UILabel!
     
     var isLong = false
     
@@ -30,18 +30,8 @@ class ChessboardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let imageView = UIImageView(image: UIImage(named: "bg"))
-//        let ImageViewSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
-//        imageView.frame = CGRect(origin: .zero, size: ImageViewSize)
+
         view.addSubview(setBackground())
-        
-        timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: .common)
-        
-        label = UILabel(frame: CGRect(x: view.center.x - 15, y: 100, width: 100, height: 50))
-        label.text = "0\(countMin) : 0\(countSec)"
-        view.addSubview(label)
         
         createChessboard()
         navBarView.layer.zPosition = 1
@@ -55,6 +45,15 @@ class ChessboardVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         chessboard.center = view.center
+    }
+    
+    func  createTimer() {
+        timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+        
+        labelTimer = UILabel(frame: CGRect(x: view.center.x - 15, y: 100, width: 100, height: 50))
+        labelTimer.text = "0\(countMin) : 0\(countSec)"
+        view.addSubview(labelTimer)
     }
     
     func createChessboard() {
@@ -95,7 +94,14 @@ class ChessboardVC: UIViewController {
     
     @IBAction func startNewGame(_ sender: UIButton) {
         chessboard.removeFromSuperview()
+        labelTimer.removeFromSuperview()
+        timer?.invalidate()
+        timer = nil
+        countSec = 0
+        countMin = 0
+        
         createChessboard()
+        createTimer()
     }
     
     @objc func timerFunc() {
@@ -108,7 +114,7 @@ class ChessboardVC: UIViewController {
         }
         sec = countSec < 10 ? ": 0\(countSec)" : ": \(countSec)"
         min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
-        label.text = min + sec
+        labelTimer.text = min + sec
     }
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {

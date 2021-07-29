@@ -9,7 +9,6 @@ import UIKit
 
 class ResultsVC: UIViewController {
     
-    
     @IBOutlet weak var navBarView: UIView!
     
     override func viewDidLoad() {
