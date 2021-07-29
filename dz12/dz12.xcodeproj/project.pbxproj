@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F108E88926B052C400987CC9 /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F108E88826B052C300987CC9 /* UIViewController+CoreKit.swift */; };
 		F11BF8FF26ADE4F000C06EDA /* Devices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BF8FE26ADE4F000C06EDA /* Devices.swift */; };
 		F11BF90126ADEB6300C06EDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11BF90026ADEB6300C06EDA /* Main.storyboard */; };
 		F1385D1326A9878A0001804D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1385D1226A9878A0001804D /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F108E88826B052C300987CC9 /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
 		F11BF8FE26ADE4F000C06EDA /* Devices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Devices.swift; sourceTree = "<group>"; };
 		F11BF90026ADEB6300C06EDA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F1385D0F26A9878A0001804D /* dz12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dz12.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F108E88726B051A200987CC9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F108E88826B052C300987CC9 /* UIViewController+CoreKit.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		F1385D0626A9878A0001804D = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 		F1385D1126A9878A0001804D /* dz12 */ = {
 			isa = PBXGroup;
 			children = (
+				F108E88726B051A200987CC9 /* Extensions */,
 				F13AAB7C26AF02FF00BCE05E /* ViewControllers */,
 				F13AAB7B26AF02D900BCE05E /* Storyboards */,
 				F1385D1226A9878A0001804D /* AppDelegate.swift */,
@@ -179,6 +190,7 @@
 			files = (
 				F1385D1726A9878A0001804D /* ChessboardVC.swift in Sources */,
 				F1385D1326A9878A0001804D /* AppDelegate.swift in Sources */,
+				F108E88926B052C400987CC9 /* UIViewController+CoreKit.swift in Sources */,
 				F1385D1526A9878A0001804D /* SceneDelegate.swift in Sources */,
 				F163A97226AD973A0009B279 /* ResultsVC.swift in Sources */,
 				F11BF8FF26ADE4F000C06EDA /* Devices.swift in Sources */,

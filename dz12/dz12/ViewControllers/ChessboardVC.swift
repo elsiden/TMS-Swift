@@ -7,35 +7,47 @@
 
 import UIKit
 
+enum checkerStep: Int {
+    case white = 0
+    case black = 1
+}
+
 class ChessboardVC: UIViewController {
     var chessboard: UIView!
     var defaultCell: UIView?
     
     var countSec: Int = 0
     var countMin: Int = 0
-    var countHour: Int = 0
     var timer: Timer?
     var label: UILabel!
+    
+    var isLong = false
+    
+    var whoStepNext: checkerStep = .white
+    var whoStepNow: checkerStep = .white
+    
+    @IBOutlet weak var navBarView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageView = UIImageView(image: UIImage(named: "bg"))
-        let ImageViewSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
-        imageView.frame = CGRect(origin: .zero, size: ImageViewSize)
-        view.addSubview(imageView)
+//        let imageView = UIImageView(image: UIImage(named: "bg"))
+//        let ImageViewSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
+//        imageView.frame = CGRect(origin: .zero, size: ImageViewSize)
+        view.addSubview(setBackground())
         
         timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
         label = UILabel(frame: CGRect(x: view.center.x - 15, y: 100, width: 100, height: 50))
-        label.text = "\(countHour):\(countMin):\(countSec)"
+        label.text = "0\(countMin) : 0\(countSec)"
         view.addSubview(label)
         
         createChessboard()
+        navBarView.layer.zPosition = 1
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         timer?.invalidate()
         timer = nil
@@ -62,10 +74,17 @@ class ChessboardVC: UIViewController {
                 let checker = UIImageView(frame: CGRect(x: 2, y: 2, width: sizeColumn - 5, height: sizeColumn - 5))
                 checker.isUserInteractionEnabled = true
                 checker.image = j < 3 ? UIImage(named: "black_cro") : UIImage(named: "white_cro")
+                checker.tag = j < 3 ? checkerStep.black.rawValue : checkerStep.white.rawValue
                 column.addSubview(checker)
                 
                 let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGesture(_:)))
+                panGesture.delegate = self
                 checker.addGestureRecognizer(panGesture)
+                
+                let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPressGesture(_:)))
+                longPressGesture.minimumPressDuration = 0.1
+                longPressGesture.delegate = self
+                checker.addGestureRecognizer(longPressGesture)
             }
         }
         chessboard.layer.borderWidth = 10
@@ -74,27 +93,47 @@ class ChessboardVC: UIViewController {
         chessboard.center = view.center
     }
     
+    @IBAction func startNewGame(_ sender: UIButton) {
+        chessboard.removeFromSuperview()
+        createChessboard()
+    }
+    
     @objc func timerFunc() {
+//        var sec: String
+//        var min: String
         countSec += 1
-        if countSec == 60 {
-            countSec = 0
-            countMin += 1
-            if countMin == 60 {
-                countMin = 0
-                countHour += 1
-            }
-        }
-        label.text = "\(countHour):\(countMin):\(countSec)"
+//        if countSec == 60 {
+//            countSec = 0
+//            countMin += 1
+//        }
+//        label.text = "\(countMin):\(countSec)"
+//        if countSec < 10 {
+//            label.text = "0\(countMin):0\(countSec)"
+//        } else {
+//            label.text = "0\(countMin):\(countSec)"
+//        }
+//        if countSec == 60 {
+//            countMin += 1
+//            if countMin < 10 {
+//                label.text = "0\(countMin):0\(countSec)"
+//            }
+//        }
+//        sec = countSec < 10 ? ": 0\(countSec)" : ": \(countSec)"
+//        countMin = countSec == 60 ? (+1, countSec = 0) : +0
+//        min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
+//        label.text = min + sec
     }
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {
+        guard isLong else { return }
+        
         let location = sender.location(in: chessboard)
         let translation = sender.translation(in: chessboard)
 
         switch sender.state {
         case .began:
             guard let checker = sender.view else { return }
-            
+
             let convertOrigin = checker.convert(checker.frame.origin, to: view)
             defaultCell = checker.superview
             view.addSubview(checker)
@@ -109,7 +148,6 @@ class ChessboardVC: UIViewController {
             let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) &&
                                                             $0.backgroundColor == .brown })
             
-            sender.view?.frame.origin = CGPoint(x: 2, y: 2)
             guard let newCell = currentCell, newCell.subviews.isEmpty, let cell = sender.view else {
                 guard let checker = sender.view else { return }
                 defaultCell?.addSubview(checker)
@@ -117,7 +155,35 @@ class ChessboardVC: UIViewController {
             }
             
             currentCell?.addSubview(cell)
+            whoStepNext = whoStepNext == .white ? .black : .white
         default: break
         }
     }
+    
+    @objc func longPressGesture(_ sender: UILongPressGestureRecognizer) {
+        guard let checker = sender.view, whoStepNow.rawValue == checker.tag else { return }
+        switch sender.state {
+        case .began:
+            isLong = true
+            UIView.animate(withDuration: 0.3) {
+                checker.transform = checker.transform.scaledBy(x: 1.3, y: 1.3)
+            }
+        case .ended:
+            isLong = false
+            UIView.animate(withDuration: 0.3) {
+                checker.transform = .identity
+            }
+            sender.view?.frame.origin = CGPoint(x: 2, y: 2)
+            whoStepNow = whoStepNext
+        default:
+            break
+        }
+    }
 }
+
+extension ChessboardVC: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
+

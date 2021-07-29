@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,54 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ChessboardVC" customModule="dz12" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PjJ-bz-gh1">
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glv-yq-Qlr">
+                                        <rect key="frame" x="16" y="2" width="62" height="40"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <state key="normal" title="&lt; Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rk2-tv-hIl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOR-7w-qDr">
+                                        <rect key="frame" x="146" y="2" width="98" height="40"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <state key="normal" title="New game">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76G-O9-V5r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Glv-yq-Qlr" firstAttribute="centerY" secondItem="PjJ-bz-gh1" secondAttribute="centerY" id="Bni-wG-zcl"/>
+                                    <constraint firstItem="Glv-yq-Qlr" firstAttribute="leading" secondItem="PjJ-bz-gh1" secondAttribute="leading" constant="16" id="Of1-I1-Ch7"/>
+                                    <constraint firstItem="lOR-7w-qDr" firstAttribute="centerX" secondItem="PjJ-bz-gh1" secondAttribute="centerX" id="QvD-Po-aVS"/>
+                                    <constraint firstItem="lOR-7w-qDr" firstAttribute="centerY" secondItem="PjJ-bz-gh1" secondAttribute="centerY" id="eT3-GU-vY8"/>
+                                    <constraint firstAttribute="height" constant="44" id="ox5-7c-8ux"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PjJ-bz-gh1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tln-qx-f3A"/>
+                            <constraint firstItem="PjJ-bz-gh1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="U06-uG-Nd3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PjJ-bz-gh1" secondAttribute="trailing" id="jU5-ih-74Z"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navBarView" destination="PjJ-bz-gh1" id="bh4-H3-lpS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

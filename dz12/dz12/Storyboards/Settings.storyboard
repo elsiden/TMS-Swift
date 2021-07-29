@@ -16,18 +16,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sett" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgN-6R-2nO">
-                                <rect key="frame" x="175" y="174" width="30" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgN-6R-2nO">
+                                <rect key="frame" x="167" y="437.5" width="80" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELX-os-npr">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mi1-3q-Nzh">
+                                        <rect key="frame" x="16" y="2" width="62" height="40"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <state key="normal" title="&lt; Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Lcu-iN-aL0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Hjn-bz-1pT"/>
+                                    <constraint firstItem="Mi1-3q-Nzh" firstAttribute="leading" secondItem="ELX-os-npr" secondAttribute="leading" constant="16" id="Ykj-Ej-auM"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="hok-9r-7xd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="yfW-V5-ESg"/>
+                                    <constraint firstItem="Mi1-3q-Nzh" firstAttribute="centerY" secondItem="ELX-os-npr" secondAttribute="centerY" id="zdT-Qg-pFe"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ELX-os-npr" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Lqf-jT-fVx"/>
+                            <constraint firstItem="tgN-6R-2nO" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="RBL-nh-yOC"/>
+                            <constraint firstItem="tgN-6R-2nO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Uxe-PJ-wew"/>
+                            <constraint firstItem="ELX-os-npr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="dTT-Xx-067"/>
+                            <constraint firstItem="ELX-os-npr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kSv-gT-EJb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QAX-Vu-4Cs"/>
+                    <connections>
+                        <outlet property="navBarView" destination="ELX-os-npr" id="1fw-kN-Ppz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
