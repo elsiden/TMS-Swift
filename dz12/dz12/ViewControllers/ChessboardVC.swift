@@ -33,6 +33,7 @@ class ChessboardVC: UIViewController {
 
         view.addSubview(setBackground())
         
+        createTimer()
         createChessboard()
         navBarView.layer.zPosition = 1
     }
@@ -51,7 +52,9 @@ class ChessboardVC: UIViewController {
         timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
-        labelTimer = UILabel(frame: CGRect(x: view.center.x - 15, y: 100, width: 100, height: 50))
+        labelTimer = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
+        labelTimer.center.x = view.center.x + 25
+        labelTimer.center.y = 150
         labelTimer.text = "0\(countMin) : 0\(countSec)"
         view.addSubview(labelTimer)
     }
@@ -148,7 +151,10 @@ class ChessboardVC: UIViewController {
             }
             
             currentCell?.addSubview(cell)
-            whoStepNext = whoStepNext == .white ? .black : .white
+            if !defaultCell!.contains(cell) {
+                whoStepNext = whoStepNext == .white ? .black : .white
+            }
+            
         default: break
         }
     }
