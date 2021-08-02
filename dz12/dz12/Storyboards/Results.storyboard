@@ -33,7 +33,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="1q2-Ox-4eJ"/>
                                     <constraint firstItem="5bo-gu-6Vl" firstAttribute="leading" secondItem="Ett-E8-F5c" secondAttribute="leading" constant="16" id="3uf-4T-Vz9"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="4fV-A4-3Hq"/>
                                     <constraint firstItem="5bo-gu-6Vl" firstAttribute="centerY" secondItem="Ett-E8-F5c" secondAttribute="centerY" id="xAP-Sq-d1O"/>
                                 </constraints>
                             </view>
@@ -54,9 +53,6 @@
                             <constraint firstItem="Ett-E8-F5c" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="zz2-Zt-cAU"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="navBarView" destination="Ett-E8-F5c" id="0Bf-H9-cds"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

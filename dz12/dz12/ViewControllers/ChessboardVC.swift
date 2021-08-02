@@ -26,8 +26,6 @@ class ChessboardVC: UIViewController {
     var whoStepNext: checkerStep = .white
     var whoStepNow: checkerStep = .white
     
-    @IBOutlet weak var navBarView: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,7 +33,6 @@ class ChessboardVC: UIViewController {
         
         createTimer()
         createChessboard()
-        navBarView.layer.zPosition = 1
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -52,11 +49,20 @@ class ChessboardVC: UIViewController {
         timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .common)
         
-        labelTimer = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 50)))
-        labelTimer.center.x = view.center.x + 25
-        labelTimer.center.y = 150
-        labelTimer.text = "0\(countMin) : 0\(countSec)"
-        view.addSubview(labelTimer)
+        let attrs: [NSAttributedString.Key: Any] = [ .foregroundColor : UIColor.red,
+                                                    .font: UIFont.dited(with: 50.0) ]
+        
+        let timerView = UIView(frame: CGRect(x: view.center.x, y: 130, width: 170, height: 75))
+        timerView.center.x = view.center.x
+        timerView.backgroundColor = .black
+        timerView.layer.borderWidth = 5
+        timerView.layer.borderColor = CGColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
+        view.addSubview(timerView)
+        
+        labelTimer = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 130, height: 75)))
+        labelTimer.frame.origin.x += 20
+        labelTimer.attributedText = NSAttributedString(string: "0\(countMin) : 0\(countSec)", attributes: attrs)
+        timerView.addSubview(labelTimer)
     }
     
     func createChessboard() {
@@ -118,6 +124,7 @@ class ChessboardVC: UIViewController {
         sec = countSec < 10 ? ": 0\(countSec)" : ": \(countSec)"
         min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
         labelTimer.text = min + sec
+        labelTimer.textAlignment = .center
     }
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {

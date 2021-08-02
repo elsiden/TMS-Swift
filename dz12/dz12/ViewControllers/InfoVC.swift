@@ -1,18 +1,17 @@
 //
-//  SettingsVC.swift
+//  InfoVC.swift
 //  dz12
 //
-//  Created by Ivan Klishevich on 25.07.2021.
+//  Created by Ivan Klishevich on 02.08.2021.
 //
 
 import UIKit
 
-class SettingsVC: UIViewController {
+class InfoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(setBackground())
     }
-
 }

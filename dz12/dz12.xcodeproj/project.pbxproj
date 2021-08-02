@@ -21,6 +21,10 @@
 		F163A97226AD973A0009B279 /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F163A97126AD973A0009B279 /* ResultsVC.swift */; };
 		F163A97426AD9D400009B279 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F163A97326AD9D400009B279 /* SettingsVC.swift */; };
 		F163A97626AD9D570009B279 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F163A97526AD9D570009B279 /* Settings.storyboard */; };
+		F191FAD826B83824006F7D34 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191FAD726B83824006F7D34 /* InfoVC.swift */; };
+		F191FADA26B83870006F7D34 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F191FAD926B83870006F7D34 /* Info.storyboard */; };
+		F1CB53AE26B748D3008D203F /* UIFont+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB53AD26B748D3008D203F /* UIFont+CoreKit.swift */; };
+		F1CB53B226B74E07008D203F /* Dited.otf in Resources */ = {isa = PBXBuildFile; fileRef = F1CB53B126B74E07008D203F /* Dited.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		F163A97126AD973A0009B279 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
 		F163A97326AD9D400009B279 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		F163A97526AD9D570009B279 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		F191FAD726B83824006F7D34 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
+		F191FAD926B83870006F7D34 /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		F1CB53AD26B748D3008D203F /* UIFont+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIFont+CoreKit.swift"; path = "../../../../UIFont+CoreKit.swift"; sourceTree = "<group>"; };
+		F1CB53B126B74E07008D203F /* Dited.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dited.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				F108E88826B052C300987CC9 /* UIViewController+CoreKit.swift */,
+				F1CB53AD26B748D3008D203F /* UIFont+CoreKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -80,6 +89,7 @@
 		F1385D1126A9878A0001804D /* dz12 */ = {
 			isa = PBXGroup;
 			children = (
+				F1CB53AA26B74619008D203F /* Fonts */,
 				F108E88726B051A200987CC9 /* Extensions */,
 				F13AAB7C26AF02FF00BCE05E /* ViewControllers */,
 				F13AAB7B26AF02D900BCE05E /* Storyboards */,
@@ -100,6 +110,7 @@
 				F1385D1826A9878A0001804D /* Chessboard.storyboard */,
 				F163A96F26AD970A0009B279 /* Results.storyboard */,
 				F163A97526AD9D570009B279 /* Settings.storyboard */,
+				F191FAD926B83870006F7D34 /* Info.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -111,8 +122,17 @@
 				F163A96D26AD78A70009B279 /* MainVC.swift */,
 				F163A97126AD973A0009B279 /* ResultsVC.swift */,
 				F163A97326AD9D400009B279 /* SettingsVC.swift */,
+				F191FAD726B83824006F7D34 /* InfoVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F1CB53AA26B74619008D203F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F1CB53B126B74E07008D203F /* Dited.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +194,9 @@
 			files = (
 				F1385D1F26A9878C0001804D /* LaunchScreen.storyboard in Resources */,
 				F163A97026AD970A0009B279 /* Results.storyboard in Resources */,
+				F191FADA26B83870006F7D34 /* Info.storyboard in Resources */,
 				F1385D1C26A9878C0001804D /* Assets.xcassets in Resources */,
+				F1CB53B226B74E07008D203F /* Dited.otf in Resources */,
 				F11BF90126ADEB6300C06EDA /* Main.storyboard in Resources */,
 				F163A97626AD9D570009B279 /* Settings.storyboard in Resources */,
 				F1385D1A26A9878A0001804D /* Chessboard.storyboard in Resources */,
@@ -192,8 +214,10 @@
 				F1385D1326A9878A0001804D /* AppDelegate.swift in Sources */,
 				F108E88926B052C400987CC9 /* UIViewController+CoreKit.swift in Sources */,
 				F1385D1526A9878A0001804D /* SceneDelegate.swift in Sources */,
+				F191FAD826B83824006F7D34 /* InfoVC.swift in Sources */,
 				F163A97226AD973A0009B279 /* ResultsVC.swift in Sources */,
 				F11BF8FF26ADE4F000C06EDA /* Devices.swift in Sources */,
+				F1CB53AE26B748D3008D203F /* UIFont+CoreKit.swift in Sources */,
 				F163A96E26AD78A70009B279 /* MainVC.swift in Sources */,
 				F163A97426AD9D400009B279 /* SettingsVC.swift in Sources */,
 			);

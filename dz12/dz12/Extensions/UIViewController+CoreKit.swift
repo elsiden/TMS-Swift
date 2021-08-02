@@ -16,6 +16,7 @@ extension UIViewController {
         let imageView = UIImageView(image: UIImage(named: "bg"))
         let ImageViewSize = CGSize(width: view.bounds.size.width, height: view.bounds.size.height)
         imageView.frame = CGRect(origin: .zero, size: ImageViewSize)
+        imageView.layer.zPosition = -1
         return imageView
     }
 }

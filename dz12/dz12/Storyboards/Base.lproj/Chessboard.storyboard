@@ -58,9 +58,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PjJ-bz-gh1" secondAttribute="trailing" id="jU5-ih-74Z"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="navBarView" destination="PjJ-bz-gh1" id="bh4-H3-lpS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
