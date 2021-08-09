@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum studentsCategory: Int {
+enum StudentsCategory: Int {
     case excellent = 0
     case good = 1
     case troechnik = 2
@@ -36,7 +36,7 @@ class StudentsVC: UIViewController {
 
 extension StudentsVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let sect: studentsCategory = studentsCategory(rawValue: section) else { return 0 }
+        guard let sect = StudentsCategory(rawValue: section) else { return 0 }
         switch sect {
         case .excellent: return dataSource.filter { $0.avgMark > 4 }.count
         case .good: return dataSource.filter { $0.avgMark > 3 && $0.avgMark <= 4 }.count
@@ -50,7 +50,7 @@ extension StudentsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard let sect = studentsCategory(rawValue: section) else { return "Unknown group"}
+        guard let sect = StudentsCategory(rawValue: section) else { return "Unknown group"}
         switch sect {
         case .excellent: return "Excellent student(s)"
         case .good: return "Good student(s)"
@@ -60,7 +60,7 @@ extension StudentsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableViewStudents.dequeueReusableCell(withIdentifier: "StudentsTableCell") as? StudentsTableCell, let sect = studentsCategory(rawValue: indexPath.section) else {
+        guard let cell = tableViewStudents.dequeueReusableCell(withIdentifier: "StudentsTableCell") as? StudentsTableCell, let sect = StudentsCategory(rawValue: indexPath.section) else {
             return UITableViewCell()
         }
         switch sect {
