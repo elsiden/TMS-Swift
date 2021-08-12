@@ -19,4 +19,13 @@ extension UIViewController {
         imageView.layer.zPosition = -1
         return imageView
     }
+    
+    @discardableResult
+    func presentAlertController(with title: String?, message: String?, prefferedStyle: UIAlertController.Style = .alert, actions: UIAlertAction...) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: prefferedStyle)
+        actions.forEach { alert.addAction($0) }
+        present(alert, animated: true, completion: nil)
+        
+        return alert
+    }
 }

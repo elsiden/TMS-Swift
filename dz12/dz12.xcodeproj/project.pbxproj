@@ -16,6 +16,8 @@
 		F1385D1A26A9878A0001804D /* Chessboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1385D1826A9878A0001804D /* Chessboard.storyboard */; };
 		F1385D1C26A9878C0001804D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1385D1B26A9878C0001804D /* Assets.xcassets */; };
 		F1385D1F26A9878C0001804D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1385D1D26A9878C0001804D /* LaunchScreen.storyboard */; };
+		F1468A8B26C128D90008C40E /* Checker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1468A8A26C128D90008C40E /* Checker.swift */; };
+		F1468A8D26C130CD0008C40E /* KeysUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1468A8C26C130CD0008C40E /* KeysUserDefaults.swift */; };
 		F163A96E26AD78A70009B279 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F163A96D26AD78A70009B279 /* MainVC.swift */; };
 		F163A97026AD970A0009B279 /* Results.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F163A96F26AD970A0009B279 /* Results.storyboard */; };
 		F163A97226AD973A0009B279 /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F163A97126AD973A0009B279 /* ResultsVC.swift */; };
@@ -39,6 +41,8 @@
 		F1385D1B26A9878C0001804D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1385D1E26A9878C0001804D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1385D2026A9878C0001804D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1468A8A26C128D90008C40E /* Checker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checker.swift; sourceTree = "<group>"; };
+		F1468A8C26C130CD0008C40E /* KeysUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysUserDefaults.swift; sourceTree = "<group>"; };
 		F163A96D26AD78A70009B279 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		F163A96F26AD970A0009B279 /* Results.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Results.storyboard; sourceTree = "<group>"; };
 		F163A97126AD973A0009B279 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		F1385D1126A9878A0001804D /* dz12 */ = {
 			isa = PBXGroup;
 			children = (
+				F1468A8926C128C60008C40E /* Classes */,
 				F1CB53AA26B74619008D203F /* Fonts */,
 				F108E88726B051A200987CC9 /* Extensions */,
 				F13AAB7C26AF02FF00BCE05E /* ViewControllers */,
@@ -99,6 +104,7 @@
 				F1385D1D26A9878C0001804D /* LaunchScreen.storyboard */,
 				F1385D2026A9878C0001804D /* Info.plist */,
 				F11BF8FE26ADE4F000C06EDA /* Devices.swift */,
+				F1468A8C26C130CD0008C40E /* KeysUserDefaults.swift */,
 			);
 			path = dz12;
 			sourceTree = "<group>";
@@ -125,6 +131,14 @@
 				F191FAD726B83824006F7D34 /* InfoVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F1468A8926C128C60008C40E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F1468A8A26C128D90008C40E /* Checker.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		F1CB53AA26B74619008D203F /* Fonts */ = {
@@ -218,7 +232,9 @@
 				F163A97226AD973A0009B279 /* ResultsVC.swift in Sources */,
 				F11BF8FF26ADE4F000C06EDA /* Devices.swift in Sources */,
 				F1CB53AE26B748D3008D203F /* UIFont+CoreKit.swift in Sources */,
+				F1468A8D26C130CD0008C40E /* KeysUserDefaults.swift in Sources */,
 				F163A96E26AD78A70009B279 /* MainVC.swift in Sources */,
+				F1468A8B26C128D90008C40E /* Checker.swift in Sources */,
 				F163A97426AD9D400009B279 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
