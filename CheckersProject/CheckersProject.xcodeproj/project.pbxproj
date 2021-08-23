@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F12502F126C68590003D2F66 /* UIFont+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12502F026C68590003D2F66 /* UIFont+CoreKit.swift */; };
+		F12502F426C6EA15003D2F66 /* Checkers+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12502F326C6EA15003D2F66 /* Checkers+Create.swift */; };
+		F12502F626C6EA66003D2F66 /* Checkers+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12502F526C6EA66003D2F66 /* Checkers+Timer.swift */; };
+		F13BA89226C95FC600023434 /* Checkers+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13BA89126C95FC600023434 /* Checkers+Alert.swift */; };
+		F13BA89426C9602F00023434 /* Dited.otf in Resources */ = {isa = PBXBuildFile; fileRef = F13BA89326C9602F00023434 /* Dited.otf */; };
+		F13BA89726C9706F00023434 /* KeysUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13BA89626C9706F00023434 /* KeysUserDefaults.swift */; };
+		F13BA89A26C9AFF300023434 /* CheckerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13BA89926C9AFF300023434 /* CheckerInfo.swift */; };
+		F1607FF926C591CD00377748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1607FF826C591CD00377748 /* AppDelegate.swift */; };
+		F1607FFB26C591CD00377748 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1607FFA26C591CD00377748 /* SceneDelegate.swift */; };
+		F160800226C591CF00377748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F160800126C591CF00377748 /* Assets.xcassets */; };
+		F160800526C591CF00377748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F160800326C591CF00377748 /* LaunchScreen.storyboard */; };
+		F160801026C5C9DE00377748 /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F160800F26C5C9DE00377748 /* UIViewController+CoreKit.swift */; };
+		F160801226C5D8E800377748 /* Checkers+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F160801126C5D8E800377748 /* Checkers+Action.swift */; };
+		F160801426C5D95100377748 /* Checkers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F160801326C5D95100377748 /* Checkers.storyboard */; };
+		F160801626C5D96A00377748 /* Checkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F160801526C5D96A00377748 /* Checkers.swift */; };
+		F1664EE726C877E80009D292 /* Checkers+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1664EE626C877E80009D292 /* Checkers+Animate.swift */; };
+		F19E4E4426D14BA000394452 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E4E4226D14BA000394452 /* ThemeCollectionViewCell.swift */; };
+		F19E4E4526D14BA000394452 /* ThemeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F19E4E4326D14BA000394452 /* ThemeCollectionViewCell.xib */; };
+		F19E4E4726D14E1000394452 /* Checkers+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E4E4626D14E1000394452 /* Checkers+CollectionView.swift */; };
+		F19E4E4926D18E4500394452 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E4E4826D18E4500394452 /* Theme.swift */; };
+		F1BE2A9726C9C37B00084316 /* URL+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE2A9626C9C37B00084316 /* URL+CoreKit.swift */; };
+		F1BE2A9926C9DEA200084316 /* Checkers+SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE2A9826C9DEA200084316 /* Checkers+SaveData.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F12502F026C68590003D2F66 /* UIFont+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+CoreKit.swift"; sourceTree = "<group>"; };
+		F12502F326C6EA15003D2F66 /* Checkers+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Create.swift"; sourceTree = "<group>"; };
+		F12502F526C6EA66003D2F66 /* Checkers+Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Timer.swift"; sourceTree = "<group>"; };
+		F13BA89126C95FC600023434 /* Checkers+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Alert.swift"; sourceTree = "<group>"; };
+		F13BA89326C9602F00023434 /* Dited.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Dited.otf; sourceTree = "<group>"; };
+		F13BA89626C9706F00023434 /* KeysUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysUserDefaults.swift; sourceTree = "<group>"; };
+		F13BA89926C9AFF300023434 /* CheckerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckerInfo.swift; sourceTree = "<group>"; };
+		F1607FF526C591CD00377748 /* CheckersProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckersProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1607FF826C591CD00377748 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1607FFA26C591CD00377748 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F160800126C591CF00377748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F160800426C591CF00377748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F160800626C591CF00377748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F160800F26C5C9DE00377748 /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
+		F160801126C5D8E800377748 /* Checkers+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Action.swift"; sourceTree = "<group>"; };
+		F160801326C5D95100377748 /* Checkers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Checkers.storyboard; sourceTree = "<group>"; };
+		F160801526C5D96A00377748 /* Checkers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkers.swift; sourceTree = "<group>"; };
+		F1664EE626C877E80009D292 /* Checkers+Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Animate.swift"; sourceTree = "<group>"; };
+		F19E4E4226D14BA000394452 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		F19E4E4326D14BA000394452 /* ThemeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCollectionViewCell.xib; sourceTree = "<group>"; };
+		F19E4E4626D14E1000394452 /* Checkers+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+CollectionView.swift"; sourceTree = "<group>"; };
+		F19E4E4826D18E4500394452 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		F1BE2A9626C9C37B00084316 /* URL+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+CoreKit.swift"; sourceTree = "<group>"; };
+		F1BE2A9826C9DEA200084316 /* Checkers+SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+SaveData.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1607FF226C591CD00377748 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F12502ED26C68508003D2F66 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F13BA89326C9602F00023434 /* Dited.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F13BA89526C9705100023434 /* KeysUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				F13BA89626C9706F00023434 /* KeysUserDefaults.swift */,
+			);
+			path = KeysUserDefaults;
+			sourceTree = "<group>";
+		};
+		F13BA89826C9AFCE00023434 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F13BA89926C9AFF300023434 /* CheckerInfo.swift */,
+				F19E4E4826D18E4500394452 /* Theme.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F1607FEC26C591CD00377748 = {
+			isa = PBXGroup;
+			children = (
+				F1607FF726C591CD00377748 /* CheckersProject */,
+				F1607FF626C591CD00377748 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1607FF626C591CD00377748 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1607FF526C591CD00377748 /* CheckersProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1607FF726C591CD00377748 /* CheckersProject */ = {
+			isa = PBXGroup;
+			children = (
+				F19E4E4026D14B5000394452 /* Cells */,
+				F13BA89826C9AFCE00023434 /* Classes */,
+				F13BA89526C9705100023434 /* KeysUserDefaults */,
+				F12502ED26C68508003D2F66 /* Fonts */,
+				F160800E26C5C9BE00377748 /* Extensions */,
+				F1607FF826C591CD00377748 /* AppDelegate.swift */,
+				F1607FFA26C591CD00377748 /* SceneDelegate.swift */,
+				F160800126C591CF00377748 /* Assets.xcassets */,
+				F160800326C591CF00377748 /* LaunchScreen.storyboard */,
+				F160800626C591CF00377748 /* Info.plist */,
+				F160801326C5D95100377748 /* Checkers.storyboard */,
+				F160801526C5D96A00377748 /* Checkers.swift */,
+			);
+			path = CheckersProject;
+			sourceTree = "<group>";
+		};
+		F160800E26C5C9BE00377748 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F160800F26C5C9DE00377748 /* UIViewController+CoreKit.swift */,
+				F160801126C5D8E800377748 /* Checkers+Action.swift */,
+				F12502F026C68590003D2F66 /* UIFont+CoreKit.swift */,
+				F12502F326C6EA15003D2F66 /* Checkers+Create.swift */,
+				F1664EE626C877E80009D292 /* Checkers+Animate.swift */,
+				F12502F526C6EA66003D2F66 /* Checkers+Timer.swift */,
+				F13BA89126C95FC600023434 /* Checkers+Alert.swift */,
+				F1BE2A9626C9C37B00084316 /* URL+CoreKit.swift */,
+				F1BE2A9826C9DEA200084316 /* Checkers+SaveData.swift */,
+				F19E4E4626D14E1000394452 /* Checkers+CollectionView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F19E4E4026D14B5000394452 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F19E4E4126D14B5900394452 /* ThemeCollectionViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F19E4E4126D14B5900394452 /* ThemeCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F19E4E4226D14BA000394452 /* ThemeCollectionViewCell.swift */,
+				F19E4E4326D14BA000394452 /* ThemeCollectionViewCell.xib */,
+			);
+			path = ThemeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1607FF426C591CD00377748 /* CheckersProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F160800926C591CF00377748 /* Build configuration list for PBXNativeTarget "CheckersProject" */;
+			buildPhases = (
+				F1607FF126C591CD00377748 /* Sources */,
+				F1607FF226C591CD00377748 /* Frameworks */,
+				F1607FF326C591CD00377748 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CheckersProject;
+			productName = CheckersProject;
+			productReference = F1607FF526C591CD00377748 /* CheckersProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1607FED26C591CD00377748 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					F1607FF426C591CD00377748 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = F1607FF026C591CD00377748 /* Build configuration list for PBXProject "CheckersProject" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F1607FEC26C591CD00377748;
+			productRefGroup = F1607FF626C591CD00377748 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1607FF426C591CD00377748 /* CheckersProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1607FF326C591CD00377748 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F160800526C591CF00377748 /* LaunchScreen.storyboard in Resources */,
+				F160801426C5D95100377748 /* Checkers.storyboard in Resources */,
+				F19E4E4526D14BA000394452 /* ThemeCollectionViewCell.xib in Resources */,
+				F13BA89426C9602F00023434 /* Dited.otf in Resources */,
+				F160800226C591CF00377748 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1607FF126C591CD00377748 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F13BA89226C95FC600023434 /* Checkers+Alert.swift in Sources */,
+				F19E4E4426D14BA000394452 /* ThemeCollectionViewCell.swift in Sources */,
+				F13BA89A26C9AFF300023434 /* CheckerInfo.swift in Sources */,
+				F12502F126C68590003D2F66 /* UIFont+CoreKit.swift in Sources */,
+				F1607FF926C591CD00377748 /* AppDelegate.swift in Sources */,
+				F160801626C5D96A00377748 /* Checkers.swift in Sources */,
+				F12502F626C6EA66003D2F66 /* Checkers+Timer.swift in Sources */,
+				F1BE2A9726C9C37B00084316 /* URL+CoreKit.swift in Sources */,
+				F19E4E4926D18E4500394452 /* Theme.swift in Sources */,
+				F19E4E4726D14E1000394452 /* Checkers+CollectionView.swift in Sources */,
+				F160801026C5C9DE00377748 /* UIViewController+CoreKit.swift in Sources */,
+				F1607FFB26C591CD00377748 /* SceneDelegate.swift in Sources */,
+				F1664EE726C877E80009D292 /* Checkers+Animate.swift in Sources */,
+				F1BE2A9926C9DEA200084316 /* Checkers+SaveData.swift in Sources */,
+				F160801226C5D8E800377748 /* Checkers+Action.swift in Sources */,
+				F12502F426C6EA15003D2F66 /* Checkers+Create.swift in Sources */,
+				F13BA89726C9706F00023434 /* KeysUserDefaults.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F160800326C591CF00377748 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F160800426C591CF00377748 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F160800726C591CF00377748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F160800826C591CF00377748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F160800A26C591CF00377748 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XH4QM29G34;
+				INFOPLIST_FILE = CheckersProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.tms.CheckersProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F160800B26C591CF00377748 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XH4QM29G34;
+				INFOPLIST_FILE = CheckersProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.tms.CheckersProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1607FF026C591CD00377748 /* Build configuration list for PBXProject "CheckersProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F160800726C591CF00377748 /* Debug */,
+				F160800826C591CF00377748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F160800926C591CF00377748 /* Build configuration list for PBXNativeTarget "CheckersProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F160800A26C591CF00377748 /* Debug */,
+				F160800B26C591CF00377748 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1607FED26C591CD00377748 /* Project object */;
+}
