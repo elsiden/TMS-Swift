@@ -7,26 +7,27 @@
 
 import UIKit
 
-extension Checkers: UICollectionViewDataSource {
+extension CustomSettingsView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return themes.count
+//        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ThemeCollectionViewCell", for: indexPath) as? ThemeCollectionViewCell else {
             return UICollectionViewCell()
         }
-        
+
         cell.setup(where: themes[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        changeTheme(theme: themes[indexPath.item])
+        changeFunc?(themes[indexPath.item])
     }
 }
 
-extension Checkers: UICollectionViewDelegateFlowLayout {
+extension CustomSettingsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 180)
     }

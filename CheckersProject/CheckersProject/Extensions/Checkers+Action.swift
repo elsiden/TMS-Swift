@@ -16,6 +16,7 @@ extension Checkers: UIGestureRecognizerDelegate {
         stopTimer()
         presentAlertController(with: "Start a new game?", message: "All your data will be deleted", actions: UIAlertAction(title: "Yes", style: .destructive, handler: { _ in
             self.removeDataFromUserDefaults()
+            self.removeSavePositions()
             self.createNewGame()
         }), UIAlertAction(title: "No", style: .default, handler: { _ in
             self.isFirstStep = true
@@ -31,6 +32,7 @@ extension Checkers: UIGestureRecognizerDelegate {
     }
     
     func actionWithMenuElements(where view: UIView, firstBtn: UIButton, secondBtn: UIButton, position: CGFloat) {
+        self.stopTimer()
         if view.isHidden == true {
             if position == self.view.bounds.size.width {
                 createSettings()
@@ -40,7 +42,6 @@ extension Checkers: UIGestureRecognizerDelegate {
             
             UIView.animate(withDuration: 0.5, delay: 0.0, options: []) {
                 view.center.x = self.view.center.x
-                self.stopTimer()
                 self.frameChessboard.transform = self.frameChessboard.transform.scaledBy(x: 0.001, y: 0.001)
                 self.timerLabel.transform = self.timerLabel.transform.scaledBy(x: 0.001, y: 0.001)
                 self.whoStepView.transform = self.whoStepView.transform.scaledBy(x: 0.001, y: 0.001)
@@ -70,6 +71,14 @@ extension Checkers: UIGestureRecognizerDelegate {
         }
         
         self.theme = theme
+        saveTheme()
+    }
+    
+    func clearTextField(first: UITextField, second: UITextField) {
+        first.text = ""
+        first.resignFirstResponder()
+        second.text = ""
+        second.resignFirstResponder()
     }
     
     @objc func longPressGesture(_ sender: UILongPressGestureRecognizer) {
@@ -78,6 +87,7 @@ extension Checkers: UIGestureRecognizerDelegate {
         case .began:
             isLong = true
             chessboard.bringSubviewToFront(cell)
+            self.possibleSteps(tag: cell.tag)
             UIView.animate(withDuration: 0.3) {
                 checker.transform = checker.transform.scaledBy(x: 1.2, y: 1.2)
             }
@@ -116,7 +126,7 @@ extension Checkers: UIGestureRecognizerDelegate {
             sender.setTranslation(.zero, in: chessboard)
         case .ended:
             isLong = false
-            let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) && $0.tag != 0 })
+            let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) && $0.tag != 0 && ($0.tag == possibleSteps[0] || $0.tag == possibleSteps[1])})
             
             guard let newCell = currentCell, newCell.subviews.isEmpty, let cell = sender.view else {
                 guard let checker = sender.view else { return }
@@ -129,8 +139,13 @@ extension Checkers: UIGestureRecognizerDelegate {
             if !defaultCell!.contains(cell) {
                 whoStep = whoStep == .white ? .black : .white
                 whoStepImage.image = UIImage(named: whoStep == .white ? "white" : "black")
+                whoStepLabel.text = whoStepLabel.text == firstPlayer.playerName ? secondPlayer.playerName : firstPlayer.playerName
+                
+                cellAndChecker.removeAll()
+                cleanFileWithPositions()
+                saveGamePositions()
+                saveDataToUserDefaults()
             }
-        
         default: break
         }
         

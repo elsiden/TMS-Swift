@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         let columns = 8
         let squareSize = CGSize(width: 40, height: 40)
         let xOffset = 50
-        let yOffset = 400
+        let yOffset = 200
         var check = false
 
         for row in 0...rows-1 {
@@ -49,23 +49,23 @@ class ViewController: UIViewController {
 //        =================================================
         
         textField1.backgroundColor = .white
-        view.addSubview(textField1)
+//        view.addSubview(textField1)
         
         
         labelPlus.text = "+"
-        view.addSubview(labelPlus)
+//        view.addSubview(labelPlus)
         
         
         textField2.backgroundColor = .white
-        view.addSubview(textField2)
+//        view.addSubview(textField2)
         
         
         button.setTitle("=", for: .normal)
-        view.addSubview(button)
+//        view.addSubview(button)
         button.addTarget(self, action: #selector(buttonTap(_:)), for: UIControl.Event.touchUpInside)
         
         
-        view.addSubview(labelSum)
+//        view.addSubview(labelSum)
         
     }
 

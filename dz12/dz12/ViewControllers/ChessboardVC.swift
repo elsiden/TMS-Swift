@@ -109,7 +109,6 @@ class ChessboardVC: UIViewController {
             for j in 0..<8 {
                 let column = UIView(frame: CGRect(x: sizeColumn * CGFloat(j) + 10, y: sizeColumn * CGFloat(i) + 10, width: sizeColumn, height: sizeColumn))
                 column.backgroundColor = ((i + j) % 2) == 0 ? .white : .brown
-                column.tag = ((i + j) % 2) == 0 ? 0 : tagCell
                 
                 if ((i + j) % 2) == 1 {
                     tagCell += 1
@@ -240,7 +239,7 @@ class ChessboardVC: UIViewController {
         sec = countSec < 10 ? ": 0\(countSec)" : ": \(countSec)"
         min = countMin < 10 ? "0\(countMin) " : "\(countMin) "
         labelTimer.text = min + sec
-        labelTimer.textAlignment = .center
+//        labelTimer.textAlignment = .center
     }
     
     @objc func panGesture(_ sender: UIPanGestureRecognizer) {

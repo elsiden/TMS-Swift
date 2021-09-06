@@ -12,19 +12,21 @@ enum CheckersStep: Int {
     case black = 1
 }
 
-class Checkers: UIViewController {
+class Checkers: UIViewController{
     
     @IBOutlet weak var newGameBtn: UIButton!
     @IBOutlet weak var settingsBtn: UIButton!
     @IBOutlet weak var resultsBtn: UIButton!
     
-    @IBOutlet weak var timerSwitch: UISwitch!
+//    @IBOutlet weak var timerSwitch: UISwitch!
 
     @IBOutlet weak var settingsView: UIView!
     @IBOutlet weak var resultsView: UIView!
     @IBOutlet weak var whoStepImage: UIImageView!
     @IBOutlet weak var whoStepView: UIView!
-    @IBOutlet weak var collectionTheme: UICollectionView!
+    @IBOutlet weak var whoStepLabel: UILabel!
+    @IBOutlet weak var collectionTheme: CustomSettingsView!
+    @IBOutlet weak var playersNames: CustomPlayersNameAlert!
     
     var chessboard: UIView!
     var frameChessboard: UIImageView!
@@ -33,30 +35,32 @@ class Checkers: UIViewController {
     var isFirstStep = true
     var whoStep: CheckersStep = .white
     var cellAndChecker: [CheckerInfo] = []
+    var possibleSteps: [Int] = []
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let ud = UserDefaults.standard
     
-    var timer: Timer?
+    var timer: CADisplayLink?
     var seconds: Int = 0
     var timerLabel: UILabel!
+    
+    let dateFormatter = DateFormatter()
+    var dataDate: String = ""
     
     var theme: Theme = Theme()
     var themes: [Theme] = []
     var background: UIImageView?
+    
+    var firstPlayer: Player = Player()
+    var secondPlayer: Player = Player()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         checkSaveFile()
-        view.addSubview(setBackground(where: theme.themeTitle))
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        saveDataToUserDefaults()
-        saveGamePositions()
-        saveTheme()
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }

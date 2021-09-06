@@ -11,6 +11,8 @@ enum KeysUserDefaults: String {
     case timerSec = "timerSec_"
     case isTimerOn = "isTimerNo_"
     
+    case startGameDate = "startGameDate_"
+    
     case whoStep = "whoStep_"
     
     case saveBoard = "saveBoard_"
@@ -22,4 +24,8 @@ enum KeysUserDefaults: String {
     case cellsTitle = "cellsTitle_"
     case lightCell = "lightCell_"
     case darkCell = "darkCell_"
+    
+    case playerName = "playerName_"
+    case playerChecker = "playerChecker_"
+    case players = "players_"
 }

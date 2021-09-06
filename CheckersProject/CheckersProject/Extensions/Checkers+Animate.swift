@@ -30,7 +30,25 @@ extension Checkers {
             }
             UIView.animate(withDuration: 0.75) {
                 self.whoStepView.transform = .identity
+                self.whoStepLabel.transform = .identity
             }
+        }
+    }
+    
+    func animateAlertNames() {
+        self.playersNames.isHidden = false
+        UIView.animate(withDuration: 0.75) {
+            self.playersNames.transform = .identity
+        } completion: { _ in
+            
+        }
+    }
+    
+    func hideAlertNames() {
+        UIView.animate(withDuration: 0.75) {
+            self.playersNames.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+        } completion: { _ in
+            self.playersNames.isHidden = true
         }
     }
 }

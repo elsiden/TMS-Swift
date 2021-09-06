@@ -16,15 +16,19 @@ extension Checkers {
         timerLabel.attributedText = NSAttributedString(string: timerString(), attributes: attrs)
         timerLabel.center.y = view.center.y - size
         view.addSubview(timerLabel)
+        
+        timer = CADisplayLink(target: self, selector: #selector(timerFunc))
+        timer?.preferredFramesPerSecond = 1
+        timer?.isPaused = true
+        timer?.add(to: RunLoop.main, forMode: .common)
     }
     
     func startTimer() {
-        timer = Timer(timeInterval: 1, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
-        RunLoop.main.add(timer!, forMode: .common)
+        timer?.isPaused = false
     }
     
     func stopTimer() {
-        timer?.invalidate()
+        timer?.isPaused = true
     }
     
     @objc func timerFunc() {

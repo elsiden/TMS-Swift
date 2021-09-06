@@ -56,13 +56,7 @@ extension Checkers {
                 cell.addSubview(checker)
             }
         }
-
-        whoStepImage.image = UIImage(named: whoStep == .white ? "white" : "black")
-        whoStepView.backgroundColor = UIColor(cgColor: CGColor(red: 250 / 255, green: 250 / 255, blue: 250 / 255, alpha: 0.3))
-        whoStepView.layer.cornerRadius = 10
-        whoStepView.transform = whoStepView.transform.scaledBy(x: 0.0, y: 0.0)
-//        settingsView.backgroundColor = UIColor(cgColor: CGColor(red: 250 / 255, green: 250 / 255, blue: 250 / 255, alpha: 0.5))
-//        settingsView.layer.cornerRadius = 20
+        
         frameChessboard = UIImageView(frame: CGRect(x: -size, y: 0, width: size, height: size))
         frameChessboard.image = UIImage(named: "chessboardFrame")
         frameChessboard.isUserInteractionEnabled = true
@@ -70,6 +64,8 @@ extension Checkers {
         frameChessboard.backgroundColor = .black
         view.addSubview(frameChessboard)
         frameChessboard.addSubview(chessboard)
+        
+        dateFormatter.dateFormat = "dd/MM/yy HH:mm"
     }
     
     func create(where view: UIView) {
@@ -89,31 +85,64 @@ extension Checkers {
     }
     
     func createNewGame() {
-        stopTimer()
         timer = nil
         
-        frameChessboard.removeFromSuperview()
-        timerLabel.removeFromSuperview()
-        seconds = 0
-        
-        isFirstStep = true
-        whoStep = .white
-        createTimer()
-        createChessboard()
-        animateScreen()
+        UIView.animate(withDuration: 0.5) {
+            self.frameChessboard.transform = self.frameChessboard.transform.scaledBy(x: 0.001, y: 0.001)
+            self.timerLabel.transform = self.timerLabel.transform.scaledBy(x: 0.001, y: 0.001)
+            self.whoStepView.transform = self.whoStepView.transform.scaledBy(x: 0.001, y: 0.001)
+            self.whoStepLabel.transform = self.whoStepLabel.transform.scaledBy(x: 0.001, y: 0.001)
+            self.newGameBtn.transform = self.newGameBtn.transform.scaledBy(x: 0.001, y: 0.001)
+            self.settingsBtn.transform = self.settingsBtn.transform.scaledBy(x: 0.001, y: 0.001)
+            self.resultsBtn.transform = self.resultsBtn.transform.scaledBy(x: 0.001, y: 0.001)
+        } completion: { _ in
+            self.frameChessboard.removeFromSuperview()
+            self.timerLabel.removeFromSuperview()
+            self.cellAndChecker.removeAll()
+            self.seconds = 0
+            self.setDate()
+            self.isFirstStep = true
+            self.whoStep = .white
+            
+            self.animateAlertNames()
+        }
+
+//        createTimer()
+//        createChessboard()
+//        animateScreen()
     }
     
     func createGame() {
+        hideAlertNames()
         createChessboard()
         createTimer()
         createButtons()
+        whoStepImageView()
+        animateScreen()
+    }
+    
+    func createGameWithNames(firstName: String, secondName: String) {
+        hideAlertNames()
+        createChessboard()
+        createTimer()
+        createButtons()
+        whoStepImageView()
+        setWhoStepLabel()
         animateScreen()
     }
     
     func createButtons() {
-        newGameBtn.transform = newGameBtn.transform.scaledBy(x: 0.0, y: 0.0)
-        settingsBtn.transform = settingsBtn.transform.scaledBy(x: 0.0, y: 0.0)
-        resultsBtn.transform = resultsBtn.transform.scaledBy(x: 0.0, y: 0.0)
+        newGameBtn.transform = newGameBtn.transform.scaledBy(x: 0.001, y: 0.001)
+        newGameBtn.isHidden = false
+        settingsBtn.transform = settingsBtn.transform.scaledBy(x: 0.001, y: 0.001)
+        settingsBtn.isHidden = false
+        resultsBtn.transform = resultsBtn.transform.scaledBy(x: 0.001, y: 0.001)
+        resultsBtn.isHidden = false
+    }
+    
+    func createNamesAlert() {
+        playersNames.transform = playersNames.transform.scaledBy(x: 0.0, y: 0.0)
+        animateAlertNames()
     }
     
     func createThemes() {

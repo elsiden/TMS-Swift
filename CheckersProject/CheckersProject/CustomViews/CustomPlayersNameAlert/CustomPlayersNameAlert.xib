@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomPlayersNameAlert" customModule="CheckersProject" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="SbQ-kD-06L"/>
+                <outlet property="firstPlayerName" destination="gYG-Zh-fSg" id="sXh-DN-a01"/>
+                <outlet property="namesLabel" destination="odc-0r-2pm" id="EZw-Ha-DjT"/>
+                <outlet property="secondPlayerName" destination="Rek-KP-bbC" id="Oxw-ar-Y2n"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdc-KX-3dm">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sZw-Ob-TUT">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter names of players" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odc-0r-2pm">
+                                <rect key="frame" x="17" y="16" width="266" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First player" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYG-Zh-fSg">
+                                <rect key="frame" x="8" y="57.5" width="134" height="34"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Second player" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rek-KP-bbC">
+                                <rect key="frame" x="158" y="57.5" width="134" height="34"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUN-wg-KM2">
+                                <rect key="frame" x="0.0" y="108.5" width="149.5" height="41.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="-1" eventType="touchUpInside" id="Nue-DM-GWZ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFv-id-ICI">
+                                <rect key="frame" x="0.0" y="107.5" width="300" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="xAJ-qh-hel"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifn-1p-j0W">
+                                <rect key="frame" x="149.5" y="108.5" width="1" height="41.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="1" id="rDM-ZQ-yWp"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55m-x3-AeY">
+                                <rect key="frame" x="150.5" y="108.5" width="149.5" height="41.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
+                                <state key="normal" title="Train">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="trainButton:" destination="-1" eventType="touchUpInside" id="DLW-si-ySy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ifn-1p-j0W" secondAttribute="bottom" id="6zr-so-jch"/>
+                            <constraint firstItem="odc-0r-2pm" firstAttribute="top" secondItem="sZw-Ob-TUT" secondAttribute="top" constant="16" id="8n1-e7-pNd"/>
+                            <constraint firstItem="sFv-id-ICI" firstAttribute="top" secondItem="gYG-Zh-fSg" secondAttribute="bottom" constant="16" id="D0o-PG-jEh"/>
+                            <constraint firstItem="gYG-Zh-fSg" firstAttribute="top" secondItem="odc-0r-2pm" secondAttribute="bottom" constant="16" id="J0P-qv-CTz"/>
+                            <constraint firstItem="rUN-wg-KM2" firstAttribute="top" secondItem="sFv-id-ICI" secondAttribute="bottom" id="LHl-B5-dvL"/>
+                            <constraint firstItem="ifn-1p-j0W" firstAttribute="top" secondItem="sFv-id-ICI" secondAttribute="bottom" id="LRA-zc-lCl"/>
+                            <constraint firstAttribute="bottom" secondItem="rUN-wg-KM2" secondAttribute="bottom" id="Q3H-U0-XAE"/>
+                            <constraint firstItem="gYG-Zh-fSg" firstAttribute="leading" secondItem="sZw-Ob-TUT" secondAttribute="leading" constant="8" id="RUP-mo-pOA"/>
+                            <constraint firstAttribute="trailing" secondItem="sFv-id-ICI" secondAttribute="trailing" id="TWk-VC-Rrp"/>
+                            <constraint firstItem="sFv-id-ICI" firstAttribute="leading" secondItem="sZw-Ob-TUT" secondAttribute="leading" id="VuF-DN-83J"/>
+                            <constraint firstItem="55m-x3-AeY" firstAttribute="top" secondItem="sFv-id-ICI" secondAttribute="bottom" id="Xns-lP-8H0"/>
+                            <constraint firstItem="ifn-1p-j0W" firstAttribute="leading" secondItem="rUN-wg-KM2" secondAttribute="trailing" id="YYt-0B-y6S"/>
+                            <constraint firstAttribute="bottom" secondItem="55m-x3-AeY" secondAttribute="bottom" id="aas-9t-DX7"/>
+                            <constraint firstAttribute="trailing" secondItem="55m-x3-AeY" secondAttribute="trailing" id="cPo-nZ-54R"/>
+                            <constraint firstItem="55m-x3-AeY" firstAttribute="leading" secondItem="ifn-1p-j0W" secondAttribute="trailing" id="eeu-09-QFK"/>
+                            <constraint firstItem="Rek-KP-bbC" firstAttribute="leading" secondItem="gYG-Zh-fSg" secondAttribute="trailing" constant="16" id="exr-pC-9t5"/>
+                            <constraint firstAttribute="trailing" secondItem="Rek-KP-bbC" secondAttribute="trailing" constant="8" id="mM9-IN-rlN"/>
+                            <constraint firstItem="gYG-Zh-fSg" firstAttribute="width" secondItem="Rek-KP-bbC" secondAttribute="width" id="sBx-EB-gpY"/>
+                            <constraint firstItem="odc-0r-2pm" firstAttribute="centerX" secondItem="sZw-Ob-TUT" secondAttribute="centerX" id="tIR-l3-O5B"/>
+                            <constraint firstItem="ifn-1p-j0W" firstAttribute="centerX" secondItem="sZw-Ob-TUT" secondAttribute="centerX" id="taY-TO-juK"/>
+                            <constraint firstItem="rUN-wg-KM2" firstAttribute="leading" secondItem="sZw-Ob-TUT" secondAttribute="leading" id="waM-eQ-pIo"/>
+                            <constraint firstItem="Rek-KP-bbC" firstAttribute="top" secondItem="odc-0r-2pm" secondAttribute="bottom" constant="16" id="y2n-sS-iAD"/>
+                        </constraints>
+                    </view>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Xdc-KX-3dm" secondAttribute="bottom" id="DXK-c4-rUk"/>
+                <constraint firstItem="Xdc-KX-3dm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="DtK-qI-RDb"/>
+                <constraint firstItem="Xdc-KX-3dm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hgf-oX-Icz"/>
+                <constraint firstAttribute="trailing" secondItem="Xdc-KX-3dm" secondAttribute="trailing" id="rae-6T-HPC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="343.47826086956525" y="44.866071428571423"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

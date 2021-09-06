@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F121603726E662D200A92244 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F121603626E662D200A92244 /* Player.swift */; };
 		F12502F126C68590003D2F66 /* UIFont+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12502F026C68590003D2F66 /* UIFont+CoreKit.swift */; };
 		F12502F426C6EA15003D2F66 /* Checkers+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12502F326C6EA15003D2F66 /* Checkers+Create.swift */; };
 		F12502F626C6EA66003D2F66 /* Checkers+Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12502F526C6EA66003D2F66 /* Checkers+Timer.swift */; };
@@ -18,20 +19,29 @@
 		F1607FFB26C591CD00377748 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1607FFA26C591CD00377748 /* SceneDelegate.swift */; };
 		F160800226C591CF00377748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F160800126C591CF00377748 /* Assets.xcassets */; };
 		F160800526C591CF00377748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F160800326C591CF00377748 /* LaunchScreen.storyboard */; };
-		F160801026C5C9DE00377748 /* UIViewController+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F160800F26C5C9DE00377748 /* UIViewController+CoreKit.swift */; };
 		F160801226C5D8E800377748 /* Checkers+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F160801126C5D8E800377748 /* Checkers+Action.swift */; };
 		F160801426C5D95100377748 /* Checkers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F160801326C5D95100377748 /* Checkers.storyboard */; };
 		F160801626C5D96A00377748 /* Checkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F160801526C5D96A00377748 /* Checkers.swift */; };
+		F1618FFA26DC435C00F6CF63 /* Checkers+Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1618FF926DC435C00F6CF63 /* Checkers+Move.swift */; };
+		F1618FFC26DC43C700F6CF63 /* Checkers+NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1618FFB26DC43C700F6CF63 /* Checkers+NotificationCenter.swift */; };
 		F1664EE726C877E80009D292 /* Checkers+Animate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1664EE626C877E80009D292 /* Checkers+Animate.swift */; };
+		F173C1A326DE91BF0021BB25 /* Checkers+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F173C1A226DE91BF0021BB25 /* Checkers+Date.swift */; };
+		F173C1A526DEAC7D0021BB25 /* UIView+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F173C1A426DEAC7D0021BB25 /* UIView+CoreKit.swift */; };
+		F19354E726E52D200014B405 /* CustomPlayersNameAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = F19354E626E52D200014B405 /* CustomPlayersNameAlert.xib */; };
+		F19354E926E52D450014B405 /* CustomPlayersNameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19354E826E52D450014B405 /* CustomPlayersNameAlert.swift */; };
+		F19354EB26E541820014B405 /* Checkers+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19354EA26E541820014B405 /* Checkers+Appearance.swift */; };
 		F19E4E4426D14BA000394452 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E4E4226D14BA000394452 /* ThemeCollectionViewCell.swift */; };
 		F19E4E4526D14BA000394452 /* ThemeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F19E4E4326D14BA000394452 /* ThemeCollectionViewCell.xib */; };
-		F19E4E4726D14E1000394452 /* Checkers+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E4E4626D14E1000394452 /* Checkers+CollectionView.swift */; };
+		F19E4E4726D14E1000394452 /* CustomSettingsView+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E4E4626D14E1000394452 /* CustomSettingsView+CollectionView.swift */; };
 		F19E4E4926D18E4500394452 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E4E4826D18E4500394452 /* Theme.swift */; };
+		F1A172A626DD262C0074EA50 /* CustomSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A172A526DD262C0074EA50 /* CustomSettingsView.swift */; };
+		F1A172A826DD264E0074EA50 /* CustomSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1A172A726DD264E0074EA50 /* CustomSettingsView.xib */; };
 		F1BE2A9726C9C37B00084316 /* URL+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE2A9626C9C37B00084316 /* URL+CoreKit.swift */; };
 		F1BE2A9926C9DEA200084316 /* Checkers+SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE2A9826C9DEA200084316 /* Checkers+SaveData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F121603626E662D200A92244 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F12502F026C68590003D2F66 /* UIFont+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+CoreKit.swift"; sourceTree = "<group>"; };
 		F12502F326C6EA15003D2F66 /* Checkers+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Create.swift"; sourceTree = "<group>"; };
 		F12502F526C6EA66003D2F66 /* Checkers+Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Timer.swift"; sourceTree = "<group>"; };
@@ -45,15 +55,23 @@
 		F160800126C591CF00377748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F160800426C591CF00377748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F160800626C591CF00377748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F160800F26C5C9DE00377748 /* UIViewController+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreKit.swift"; sourceTree = "<group>"; };
 		F160801126C5D8E800377748 /* Checkers+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Action.swift"; sourceTree = "<group>"; };
 		F160801326C5D95100377748 /* Checkers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Checkers.storyboard; sourceTree = "<group>"; };
 		F160801526C5D96A00377748 /* Checkers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkers.swift; sourceTree = "<group>"; };
+		F1618FF926DC435C00F6CF63 /* Checkers+Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Move.swift"; sourceTree = "<group>"; };
+		F1618FFB26DC43C700F6CF63 /* Checkers+NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+NotificationCenter.swift"; sourceTree = "<group>"; };
 		F1664EE626C877E80009D292 /* Checkers+Animate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Animate.swift"; sourceTree = "<group>"; };
+		F173C1A226DE91BF0021BB25 /* Checkers+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Date.swift"; sourceTree = "<group>"; };
+		F173C1A426DEAC7D0021BB25 /* UIView+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CoreKit.swift"; sourceTree = "<group>"; };
+		F19354E626E52D200014B405 /* CustomPlayersNameAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPlayersNameAlert.xib; sourceTree = "<group>"; };
+		F19354E826E52D450014B405 /* CustomPlayersNameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPlayersNameAlert.swift; sourceTree = "<group>"; };
+		F19354EA26E541820014B405 /* Checkers+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Appearance.swift"; sourceTree = "<group>"; };
 		F19E4E4226D14BA000394452 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		F19E4E4326D14BA000394452 /* ThemeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCollectionViewCell.xib; sourceTree = "<group>"; };
-		F19E4E4626D14E1000394452 /* Checkers+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+CollectionView.swift"; sourceTree = "<group>"; };
+		F19E4E4626D14E1000394452 /* CustomSettingsView+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomSettingsView+CollectionView.swift"; sourceTree = "<group>"; };
 		F19E4E4826D18E4500394452 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		F1A172A526DD262C0074EA50 /* CustomSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSettingsView.swift; sourceTree = "<group>"; };
+		F1A172A726DD264E0074EA50 /* CustomSettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSettingsView.xib; sourceTree = "<group>"; };
 		F1BE2A9626C9C37B00084316 /* URL+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+CoreKit.swift"; sourceTree = "<group>"; };
 		F1BE2A9826C9DEA200084316 /* Checkers+SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+SaveData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +108,7 @@
 			children = (
 				F13BA89926C9AFF300023434 /* CheckerInfo.swift */,
 				F19E4E4826D18E4500394452 /* Theme.swift */,
+				F121603626E662D200A92244 /* Player.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -113,6 +132,7 @@
 		F1607FF726C591CD00377748 /* CheckersProject */ = {
 			isa = PBXGroup;
 			children = (
+				F1A172A226DD25740074EA50 /* CustomViews */,
 				F19E4E4026D14B5000394452 /* Cells */,
 				F13BA89826C9AFCE00023434 /* Classes */,
 				F13BA89526C9705100023434 /* KeysUserDefaults */,
@@ -132,7 +152,6 @@
 		F160800E26C5C9BE00377748 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F160800F26C5C9DE00377748 /* UIViewController+CoreKit.swift */,
 				F160801126C5D8E800377748 /* Checkers+Action.swift */,
 				F12502F026C68590003D2F66 /* UIFont+CoreKit.swift */,
 				F12502F326C6EA15003D2F66 /* Checkers+Create.swift */,
@@ -141,9 +160,23 @@
 				F13BA89126C95FC600023434 /* Checkers+Alert.swift */,
 				F1BE2A9626C9C37B00084316 /* URL+CoreKit.swift */,
 				F1BE2A9826C9DEA200084316 /* Checkers+SaveData.swift */,
-				F19E4E4626D14E1000394452 /* Checkers+CollectionView.swift */,
+				F19E4E4626D14E1000394452 /* CustomSettingsView+CollectionView.swift */,
+				F1618FF926DC435C00F6CF63 /* Checkers+Move.swift */,
+				F1618FFB26DC43C700F6CF63 /* Checkers+NotificationCenter.swift */,
+				F173C1A226DE91BF0021BB25 /* Checkers+Date.swift */,
+				F173C1A426DEAC7D0021BB25 /* UIView+CoreKit.swift */,
+				F19354EA26E541820014B405 /* Checkers+Appearance.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F19354E526E52CD70014B405 /* CustomPlayersNameAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F19354E626E52D200014B405 /* CustomPlayersNameAlert.xib */,
+				F19354E826E52D450014B405 /* CustomPlayersNameAlert.swift */,
+			);
+			path = CustomPlayersNameAlert;
 			sourceTree = "<group>";
 		};
 		F19E4E4026D14B5000394452 /* Cells */ = {
@@ -161,6 +194,32 @@
 				F19E4E4326D14BA000394452 /* ThemeCollectionViewCell.xib */,
 			);
 			path = ThemeCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		F1A172A226DD25740074EA50 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F19354E526E52CD70014B405 /* CustomPlayersNameAlert */,
+				F1A172A426DD258E0074EA50 /* CustomResultsView */,
+				F1A172A326DD25810074EA50 /* CustomSettingsView */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		F1A172A326DD25810074EA50 /* CustomSettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				F1A172A526DD262C0074EA50 /* CustomSettingsView.swift */,
+				F1A172A726DD264E0074EA50 /* CustomSettingsView.xib */,
+			);
+			path = CustomSettingsView;
+			sourceTree = "<group>";
+		};
+		F1A172A426DD258E0074EA50 /* CustomResultsView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomResultsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +283,8 @@
 				F160801426C5D95100377748 /* Checkers.storyboard in Resources */,
 				F19E4E4526D14BA000394452 /* ThemeCollectionViewCell.xib in Resources */,
 				F13BA89426C9602F00023434 /* Dited.otf in Resources */,
+				F19354E726E52D200014B405 /* CustomPlayersNameAlert.xib in Resources */,
+				F1A172A826DD264E0074EA50 /* CustomSettingsView.xib in Resources */,
 				F160800226C591CF00377748 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F121603726E662D200A92244 /* Player.swift in Sources */,
+				F173C1A526DEAC7D0021BB25 /* UIView+CoreKit.swift in Sources */,
 				F13BA89226C95FC600023434 /* Checkers+Alert.swift in Sources */,
 				F19E4E4426D14BA000394452 /* ThemeCollectionViewCell.swift in Sources */,
 				F13BA89A26C9AFF300023434 /* CheckerInfo.swift in Sources */,
@@ -242,15 +305,20 @@
 				F1607FF926C591CD00377748 /* AppDelegate.swift in Sources */,
 				F160801626C5D96A00377748 /* Checkers.swift in Sources */,
 				F12502F626C6EA66003D2F66 /* Checkers+Timer.swift in Sources */,
+				F1618FFC26DC43C700F6CF63 /* Checkers+NotificationCenter.swift in Sources */,
 				F1BE2A9726C9C37B00084316 /* URL+CoreKit.swift in Sources */,
 				F19E4E4926D18E4500394452 /* Theme.swift in Sources */,
-				F19E4E4726D14E1000394452 /* Checkers+CollectionView.swift in Sources */,
-				F160801026C5C9DE00377748 /* UIViewController+CoreKit.swift in Sources */,
+				F19E4E4726D14E1000394452 /* CustomSettingsView+CollectionView.swift in Sources */,
 				F1607FFB26C591CD00377748 /* SceneDelegate.swift in Sources */,
+				F19354E926E52D450014B405 /* CustomPlayersNameAlert.swift in Sources */,
+				F19354EB26E541820014B405 /* Checkers+Appearance.swift in Sources */,
+				F1618FFA26DC435C00F6CF63 /* Checkers+Move.swift in Sources */,
+				F173C1A326DE91BF0021BB25 /* Checkers+Date.swift in Sources */,
 				F1664EE726C877E80009D292 /* Checkers+Animate.swift in Sources */,
 				F1BE2A9926C9DEA200084316 /* Checkers+SaveData.swift in Sources */,
 				F160801226C5D8E800377748 /* Checkers+Action.swift in Sources */,
 				F12502F426C6EA15003D2F66 /* Checkers+Create.swift in Sources */,
+				F1A172A626DD262C0074EA50 /* CustomSettingsView.swift in Sources */,
 				F13BA89726C9706F00023434 /* KeysUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
