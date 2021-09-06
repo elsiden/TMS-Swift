@@ -1,2 +1,4 @@
 #gitignore file demo
 .DS_Store
+Pods
+Podfile.lock
