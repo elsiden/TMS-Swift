@@ -45,6 +45,7 @@ extension Checkers: UIGestureRecognizerDelegate {
                 self.frameChessboard.transform = self.frameChessboard.transform.scaledBy(x: 0.001, y: 0.001)
                 self.timerLabel.transform = self.timerLabel.transform.scaledBy(x: 0.001, y: 0.001)
                 self.whoStepView.transform = self.whoStepView.transform.scaledBy(x: 0.001, y: 0.001)
+                self.whoStepLabel.transform = self.whoStepLabel.transform.scaledBy(x: 0.001, y: 0.001)
                 firstBtn.transform = firstBtn.transform.scaledBy(x: 0.001, y: 0.001)
                 secondBtn.transform = secondBtn.transform.scaledBy(x: 0.001, y: 0.001)
             } completion: { _ in }
@@ -54,6 +55,7 @@ extension Checkers: UIGestureRecognizerDelegate {
                 self.frameChessboard.transform = .identity
                 self.timerLabel.transform = .identity
                 self.whoStepView.transform = .identity
+                self.whoStepLabel.transform = .identity
                 firstBtn.transform = .identity
                 secondBtn.transform = .identity
             } completion: { _ in
@@ -82,12 +84,39 @@ extension Checkers: UIGestureRecognizerDelegate {
     }
     
     @objc func longPressGesture(_ sender: UILongPressGestureRecognizer) {
-        guard let checker = sender.view, let cell = checker.superview, whoStep.rawValue == checker.tag else { return }
+        var step: Bool = false
+        var steps: [Int] = []
+        
+        if beatSteps.isEmpty {
+            if whoStep.rawValue == 0 {
+                steps = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+            } else {
+                steps = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+            }
+        } else {
+            for step in beatSteps {
+                steps.append(step[0])
+            }
+        }
+        
+        for value in steps {
+            if value == sender.view?.tag {
+                step = true
+                break
+            }
+        }
+        
+        guard let checker = sender.view, let cell = checker.superview, step else { return }
+        
         switch sender.state {
         case .began:
             isLong = true
             chessboard.bringSubviewToFront(cell)
-            self.possibleSteps(tag: cell.tag)
+            
+            if steps.count == 12 {
+                self.possibleSteps(tag: cell.tag)
+            }
+            
             UIView.animate(withDuration: 0.3) {
                 checker.transform = checker.transform.scaledBy(x: 1.2, y: 1.2)
             }
@@ -126,25 +155,91 @@ extension Checkers: UIGestureRecognizerDelegate {
             sender.setTranslation(.zero, in: chessboard)
         case .ended:
             isLong = false
-            let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) && $0.tag != 0 && ($0.tag == possibleSteps[0] || $0.tag == possibleSteps[1])})
+            var steps: [Int] = []
+            let currentCell = chessboard.subviews.first(where: {$0.frame.contains(location) && $0.tag != 0})
+            if !beatSteps.isEmpty {
+                for value in beatSteps {
+                    if currentCell?.tag == value[2] && sender.view?.tag == value[0] {
+                        steps = value
+                        break
+                    }
+                }
+            } else if !possibleSteps.isEmpty {
+                for value in possibleSteps {
+                    if currentCell?.tag == value {
+                        steps.append(value)
+                        break
+                    }
+                }
+            }
             
-            guard let newCell = currentCell, newCell.subviews.isEmpty, let cell = sender.view else {
+            guard let newCell = currentCell, newCell.subviews.isEmpty, let checker = sender.view, !steps.isEmpty else {
                 guard let checker = sender.view else { return }
                 defaultCell?.addSubview(checker)
                 return
             }
             chessboard.bringSubviewToFront(newCell)
-            newCell.addSubview(cell)
+            newCell.addSubview(checker)
             
-            if !defaultCell!.contains(cell) {
-                whoStep = whoStep == .white ? .black : .white
-                whoStepImage.image = UIImage(named: whoStep == .white ? "white" : "black")
-                whoStepLabel.text = whoStepLabel.text == firstPlayer.playerName ? secondPlayer.playerName : firstPlayer.playerName
+            if !defaultCell!.contains(checker) {
+                if steps.count == 4 {
+                    if steps[0] == checker.tag && steps[2] == newCell.tag {
+                        let removeCell = chessboard.subviews.first(where: { $0.tag == steps[3] })
+                        removeCell?.subviews.forEach{ checker in
+                            checker.removeFromSuperview()
+                        }
+                    }
+                }
                 
                 cellAndChecker.removeAll()
+                
                 cleanFileWithPositions()
                 saveGamePositions()
                 saveDataToUserDefaults()
+                
+
+                whoStep = whoStep == .white ? .black : .white
+                var count = 0
+                if whoStep == .white {
+                    for chckr in cellAndChecker {
+                        count += 1
+                        if chckr.checkerTag ?? 0 > 11 {
+                            print("resume")
+                            break
+                        } else if count == cellAndChecker.count {
+                            resumeGame = false // ?
+                        }
+                        
+                    }
+                } else {
+                    for chckr in cellAndChecker {
+                        count += 1
+                        if chckr.checkerTag ?? 13 < 12 {
+                            print("resume")
+                            break
+                        } else if count == cellAndChecker.count {
+                            resumeGame = false // ?
+                        }
+                    }
+                }
+                
+                if !resumeGame {
+                    stopTimer()
+                    self.removeDataFromUserDefaults()
+                    self.removeSavePositions()
+                    self.createNewGame()
+                } else {
+                    whoStepImage.image = UIImage(named: whoStep == .white ? "whiteChecker" : "blackChecker")
+                    whoStepLabel.text = whoStepLabel.text == players[0].playerName ? players[1].playerName : players[0].playerName
+                    
+                    dynamicChecker.removeAll()
+                    beatPositions.removeAll()
+                    beatSteps.removeAll()
+                    
+                    fillDynamicCheckers()
+                    fillBeatPositions()
+                    fillBeatSteps()
+                }
             }
         default: break
         }

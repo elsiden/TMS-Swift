@@ -11,6 +11,7 @@ extension Checkers {
     func createChessboard() {
         let size = view.bounds.size.width - 40
         var tagCell: Int = 0
+        var checkerTag: Int = 0
         
         chessboard = UIView(frame: CGRect(x: 14, y: 14, width: size - 28, height: size - 28))
         
@@ -25,7 +26,6 @@ extension Checkers {
                 cell.image = UIImage(named: cell.tag == 0 ? theme.lightCell : theme.darkCell)
                 cell.isUserInteractionEnabled = true
                 chessboard.addSubview(cell)
-                
                 
                 let checker = UIImageView(frame: CGRect(x: 3, y: 3, width: sizeCell - 6, height: sizeCell - 6))
                 checker.isUserInteractionEnabled = true
@@ -43,7 +43,7 @@ extension Checkers {
                 guard cellAndChecker.isEmpty else {
                     if let position = cellAndChecker.first(where: {$0.cellTag == cell.tag}) {
                         checker.tag = position.checkerTag ?? 0
-                        checker.image = UIImage(named: checker.tag == 0 ? "white" : "black")
+                        checker.image = UIImage(named: checker.tag > 11 ? "whiteChecker" : "blackChecker")
                         cell.addSubview(checker)
                     }
                     continue
@@ -51,8 +51,9 @@ extension Checkers {
                 
                 guard row < 3 || row > 4, cell.tag != 0 else { continue }
                 
-                checker.image = UIImage(named: row < 3 ? "black" : "white")
-                checker.tag = row < 3 ? CheckersStep.black.rawValue : CheckersStep.white.rawValue
+                checker.image = UIImage(named: row < 3 ? "blackChecker" : "whiteChecker")
+                checker.tag = checkerTag
+                checkerTag += 1
                 cell.addSubview(checker)
             }
         }
@@ -99,17 +100,16 @@ extension Checkers {
             self.frameChessboard.removeFromSuperview()
             self.timerLabel.removeFromSuperview()
             self.cellAndChecker.removeAll()
+            self.players.removeAll()
             self.seconds = 0
             self.setDate()
             self.isFirstStep = true
             self.whoStep = .white
+            self.whoStepLabel.text = ""
+            self.beatSteps.removeAll()
             
             self.animateAlertNames()
         }
-
-//        createTimer()
-//        createChessboard()
-//        animateScreen()
     }
     
     func createGame() {
@@ -121,7 +121,7 @@ extension Checkers {
         animateScreen()
     }
     
-    func createGameWithNames(firstName: String, secondName: String) {
+    func createGameWithNames() {
         hideAlertNames()
         createChessboard()
         createTimer()
@@ -151,6 +151,21 @@ extension Checkers {
         
         themes.append(theme1)
         themes.append(theme2)
+    }
+    
+    func createPlayers() {
+        let player1 = Player()
+        let player2 = Player()
+        
+        players.append(player1)
+        players.append(player2)
+    }
+    
+    func createBeatSteps() {
+        saveDataToUserDefaults()
+        fillDynamicCheckers()
+        fillBeatPositions()
+        fillBeatSteps()
     }
     
     //    func createButtons() {

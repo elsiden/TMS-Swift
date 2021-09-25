@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum CheckersStep: Int {
+enum CheckersColor: Int {
     case white = 0
     case black = 1
 }
@@ -33,9 +33,14 @@ class Checkers: UIViewController{
     var defaultCell: UIView?
     var isLong = false
     var isFirstStep = true
-    var whoStep: CheckersStep = .white
+    var resumeGame: Bool = true
+    var whoStep: CheckersColor = .white
     var cellAndChecker: [CheckerInfo] = []
     var possibleSteps: [Int] = []
+    var beatPositions: [[Int]] = []
+    var beatSteps: [[Int]] = []
+    
+    var dynamicChecker: [[Int]] = []
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let ud = UserDefaults.standard
@@ -51,8 +56,7 @@ class Checkers: UIViewController{
     var themes: [Theme] = []
     var background: UIImageView?
     
-    var firstPlayer: Player = Player()
-    var secondPlayer: Player = Player()
+    var players: [Player] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

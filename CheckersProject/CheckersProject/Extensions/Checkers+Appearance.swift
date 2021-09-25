@@ -38,7 +38,7 @@ extension Checkers {
     
     func whoStepImageView() {
         whoStepView.isHidden = false
-        whoStepImage.image = UIImage(named: whoStep == .white ? "white" : "black")
+        whoStepImage.image = UIImage(named: whoStep == .white ? "whiteChecker" : "blackChecker")
         whoStepView.backgroundColor = UIColor(cgColor: CGColor(red: 250 / 255, green: 250 / 255, blue: 250 / 255, alpha: 0.3))
         whoStepView.layer.cornerRadius = 10
         whoStepView.transform = whoStepView.transform.scaledBy(x: 0.0, y: 0.0)
@@ -48,11 +48,11 @@ extension Checkers {
         let firstStep = Int.random(in: 0...1)
         let secondStep = 1 - firstStep
         
-        firstPlayer.playerChecker = firstStep
-        secondPlayer.playerChecker = secondStep
+        players[0].playerStep = firstStep
+        players[1].playerStep = secondStep
         
         whoStepLabel.isHidden = false
-        whoStepLabel.text = firstStep == 0 ? firstPlayer.playerName : secondPlayer.playerName
+        whoStepLabel.text = firstStep == 0 ? players[0].playerName : players[1].playerName
         whoStepLabel.transform = whoStepLabel.transform.scaledBy(x: 0.0, y: 0.0)
     }
 }

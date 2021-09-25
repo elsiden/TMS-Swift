@@ -11,20 +11,20 @@ class Player: NSObject, NSCoding, NSSecureCoding {
     static var supportsSecureCoding: Bool = true
     
     var playerName: String
-    var playerChecker: Int
+    var playerStep: Int
     
-    init(playerName: String = "", playerChecker: Int = 0) {
+    init(playerName: String = "", playerStep: Int = 0) {
         self.playerName = playerName
-        self.playerChecker = playerChecker
+        self.playerStep = playerStep
     }
     
     func encode(with coder: NSCoder) {
         coder.encode(playerName, forKey: KeysUserDefaults.playerName.rawValue)
-        coder.encode(playerChecker, forKey: KeysUserDefaults.playerChecker.rawValue)
+        coder.encode(playerStep, forKey: KeysUserDefaults.playerStep.rawValue)
     }
     
     required init?(coder: NSCoder) {
         self.playerName = (coder.decodeObject(forKey: KeysUserDefaults.playerName.rawValue) as? String) ?? ""
-        self.playerChecker = (coder.decodeObject(forKey: KeysUserDefaults.playerChecker.rawValue) as? Int) ?? 0
+        self.playerStep = (coder.decodeObject(forKey: KeysUserDefaults.playerStep.rawValue) as? Int) ?? 0
     }
 }

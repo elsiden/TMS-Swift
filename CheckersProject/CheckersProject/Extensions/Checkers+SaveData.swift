@@ -22,9 +22,10 @@ extension Checkers {
         if FileManager().fileExists(atPath: URL.saveURL(pathComponent: KeysUserDefaults.saveBoard.rawValue).path) {
             setDataFromUserDefaults()
             getSavePositions()
-//            getNames()
+            getNames()
             cornerRadiusForViews()
-            createGame()
+            createGameWithNames()
+            createBeatSteps()
         } else {
             cornerRadiusForViews()
             createNamesAlert()
@@ -39,7 +40,7 @@ extension Checkers {
     }
     
     func setDataFromUserDefaults() {
-        whoStep = CheckersStep(rawValue: ud.integer(forKey: KeysUserDefaults.whoStep.rawValue)) ?? .white
+        whoStep = CheckersColor(rawValue: ud.integer(forKey: KeysUserDefaults.whoStep.rawValue)) ?? .white
         seconds = ud.integer(forKey: KeysUserDefaults.timerSec.rawValue)
         dataDate = ud.string(forKey: KeysUserDefaults.startGameDate.rawValue) ?? ""
     }
@@ -112,31 +113,32 @@ extension Checkers {
                 self.playersNames.namesLabel.textColor = .red
             } else {
                 self.playersNames.namesLabel.textColor = .black
-                self.firstPlayer.playerName = self.playersNames.firstPlayerName.text ?? "unnamed"
-                self.secondPlayer.playerName = self.playersNames.secondPlayerName.text ?? "unnamed"
-                self.createGameWithNames(firstName: self.firstPlayer.playerName, secondName: self.secondPlayer.playerName)
+                self.createPlayers()
+                self.players[0].playerName = self.playersNames.firstPlayerName.text ?? "unnamed"
+                self.players[1].playerName = self.playersNames.secondPlayerName.text ?? "unnamed"
+                self.createGameWithNames()
                 self.clearTextField(first: self.playersNames.firstPlayerName, second: self.playersNames.secondPlayerName)
-//                self.saveNames()
+                self.saveNames()
             }
         }
         playersNames.trainTapped = {
+            self.createPlayers()
+            self.players[1].playerStep = 1
             self.createGame()
             self.playersNames.namesLabel.textColor = .black
             self.clearTextField(first: self.playersNames.firstPlayerName, second: self.playersNames.secondPlayerName)
+            self.saveNames()
         }
     }
     
-//    func saveNames() {
-//        var data = try? NSKeyedArchiver.archivedData(withRootObject: firstPlayer, requiringSecureCoding: true)
-//        try? data?.write(to: URL.saveURL(pathComponent: KeysUserDefaults.players.rawValue))
-//        data = try? NSKeyedArchiver.archivedData(withRootObject: secondPlayer, requiringSecureCoding: true)
-//        try? data?.write(to: URL.saveURL(pathComponent: KeysUserDefaults.players.rawValue))
-//    }
+    func saveNames() {
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: players, requiringSecureCoding: true)
+        try? data?.write(to: URL.saveURL(pathComponent: KeysUserDefaults.players.rawValue))
+    }
     
-//    func getNames() {
-//        guard let data = FileManager.default.contents(atPath: URL.saveURL(pathComponent: KeysUserDefaults.players.rawValue).absoluteString.replacingOccurrences(of: "file://", with: "")),
-//              let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Player] else { return }
-//        firstPlayer = object[0]
-//        secondPlayer = object[1]
-//    }
+    func getNames() {
+        guard let data = FileManager.default.contents(atPath: URL.saveURL(pathComponent: KeysUserDefaults.players.rawValue).absoluteString.replacingOccurrences(of: "file://", with: "")),
+              let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Player] else { return }
+        self.players = object
+    }
 }

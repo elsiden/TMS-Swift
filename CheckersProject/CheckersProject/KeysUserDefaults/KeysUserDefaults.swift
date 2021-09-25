@@ -26,6 +26,6 @@ enum KeysUserDefaults: String {
     case darkCell = "darkCell_"
     
     case playerName = "playerName_"
-    case playerChecker = "playerChecker_"
+    case playerStep = "playerStep_"
     case players = "players_"
 }
