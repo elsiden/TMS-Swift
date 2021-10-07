@@ -9,7 +9,7 @@ import UIKit
 
 extension Checkers {
     func animateScreen() {
-        UIImageView.animateKeyframes(withDuration: 0.75, delay: 0.35, options: []) {
+        UIImageView.animate(withDuration: 0.75, delay: 0.35, options: []) {
             self.frameChessboard.center.x = self.view.center.x
             self.timerLabel.center.x = self.view.center.x + 10
             self.newGameBtn.transform = .identity
