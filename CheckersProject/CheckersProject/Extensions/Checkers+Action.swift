@@ -204,7 +204,6 @@ extension Checkers: UIGestureRecognizerDelegate {
                     for chckr in cellAndChecker {
                         count += 1
                         if chckr.checkerTag ?? 0 > 11 {
-                            print("resume")
                             break
                         } else if count == cellAndChecker.count {
                             resumeGame = false // ?
@@ -215,7 +214,6 @@ extension Checkers: UIGestureRecognizerDelegate {
                     for chckr in cellAndChecker {
                         count += 1
                         if chckr.checkerTag ?? 13 < 12 {
-                            print("resume")
                             break
                         } else if count == cellAndChecker.count {
                             resumeGame = false // ?
@@ -224,10 +222,15 @@ extension Checkers: UIGestureRecognizerDelegate {
                 }
                 
                 if !resumeGame {
+                    let winner = whoStep == .white ? "Black" : "White"
                     stopTimer()
-                    self.removeDataFromUserDefaults()
-                    self.removeSavePositions()
-                    self.createNewGame()
+                    presentAlertController(with: "\(winner) wins", message: "Do you want to start a new game?", actions: UIAlertAction(title: "Yes", style: .default, handler: { _ in
+                        self.removeDataFromUserDefaults()
+                        self.removeSavePositions()
+                        self.createNewGame()
+                    }), UIAlertAction(title: "No", style: .cancel, handler: { _ in
+                        
+                    }))
                 } else {
                     whoStepImage.image = UIImage(named: whoStep == .white ? "whiteChecker" : "blackChecker")
                     whoStepLabel.text = whoStepLabel.text == players[0].playerName ? players[1].playerName : players[0].playerName

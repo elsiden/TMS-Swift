@@ -25,6 +25,6 @@ class Player: NSObject, NSCoding, NSSecureCoding {
     
     required init?(coder: NSCoder) {
         self.playerName = (coder.decodeObject(forKey: KeysUserDefaults.playerName.rawValue) as? String) ?? ""
-        self.playerStep = (coder.decodeObject(forKey: KeysUserDefaults.playerStep.rawValue) as? Int) ?? 0
+        self.playerStep = coder.decodeInteger(forKey: KeysUserDefaults.playerStep.rawValue)
     }
 }
