@@ -10,9 +10,20 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var cityTextField: UITextField!
-    @IBOutlet weak var test1: UILabel!
-    @IBOutlet weak var test2: UILabel!
-    @IBOutlet weak var test3: UILabel!
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var descriptionWeatherLabel: UILabel!
+    @IBOutlet weak var currentTemperatureLabel: UILabel!
+    @IBOutlet weak var feelsTemperatureLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var maxTemperatureLabel: UILabel!
+    @IBOutlet weak var minTemperatureLabel: UILabel!
+    @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var windDirectionLabel: UILabel!
+    @IBOutlet weak var sunsetLabel: UILabel!
+    @IBOutlet weak var sunriseLabel: UILabel!
+    @IBOutlet weak var iconLabel: UILabel!
+    @IBOutlet weak var iconImage: UIImageView!
     
     var currentCity: Weather?
 
@@ -61,6 +72,28 @@ class ViewController: UIViewController {
                                        minTemperature: minTemperature, windSpeed: windSpeed,
                                        windDirection: windDirection, sunset: Date(timeIntervalSince1970: TimeInterval(sunset)),
                                        sunrise: Date(timeIntervalSince1970: TimeInterval(sunrise)))
+            
+            DispatchQueue.main.async {
+                guard let city = self.cityTextField.text, !city.isEmpty, let currentCity = self.currentCity else { return }
+                
+                self.cityNameLabel.text = currentCity.cityName
+                self.descriptionWeatherLabel.text = "\(currentCity.arrayOfDescriptionWeather[0].descriptionWeather)"
+                self.currentTemperatureLabel.text = "\(currentCity.currentTemperature)"
+                self.feelsTemperatureLabel.text = "\(currentCity.feelsTemperature)"
+                self.pressureLabel.text = "\(currentCity.pressure)"
+                self.humidityLabel.text = "\(currentCity.humidity)"
+                self.maxTemperatureLabel.text = "\(currentCity.maxTemperature)"
+                self.minTemperatureLabel.text = "\(currentCity.minTemperature)"
+                self.windSpeedLabel.text = "\(currentCity.windSpeed)"
+                self.windDirectionLabel.text = "\(currentCity.windDirection)"
+                self.sunsetLabel.text = "\(currentCity.sunset)"
+                self.sunriseLabel.text = "\(currentCity.sunrise)"
+                self.iconLabel.text = "\(currentCity.arrayOfDescriptionWeather[0].iconWeather)"
+                
+                guard let url = URL(string: "http://openweathermap.org/img/wn/\(arrayOfDescriptionWeather[0].iconWeather)@2x.png"),
+                      let data = try? Data(contentsOf: url) else { return }
+                self.iconImage.image = UIImage(data: data)
+            }
         }
         session.resume()
     }
@@ -68,12 +101,10 @@ class ViewController: UIViewController {
 
 extension ViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let city = cityTextField.text, !city.isEmpty else { return false }
-        
+        guard let city = self.cityTextField.text, !city.isEmpty else { return false }
         let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=016467d388062bf4c642b3df500e17d3"
         getData(urlString: urlString)
-        test2.text = currentCity?.cityName
-        
+
         return true
     }
 }
