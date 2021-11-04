@@ -18,6 +18,7 @@ enum KeysUserDefaults: String {
     case saveBoard = "saveBoard_"
     case cellTag = "cellTag_"
     case checkerTag = "checkerTag_"
+    case kingChecker = "kingChecker_"
     
     case theme = "theme_"
     case themeTitle = "themeTitle_"

@@ -104,9 +104,12 @@ extension Checkers {
             self.seconds = 0
             self.setDate()
             self.isFirstStep = true
+            self.resumeGame = true
             self.whoStep = .white
             self.whoStepLabel.text = ""
             self.beatSteps.removeAll()
+            self.kingBeatSteps.removeAll()
+            self.kingCheckers.removeAll()
             
             self.animateAlertNames()
         }

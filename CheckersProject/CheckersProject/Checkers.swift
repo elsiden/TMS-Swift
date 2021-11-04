@@ -39,8 +39,13 @@ class Checkers: UIViewController{
     var possibleSteps: [Int] = []
     var beatPositions: [[Int]] = []
     var beatSteps: [[Int]] = []
+    var kingCheckers: [Int] = []
+    var kingBeatPositions: [[Int]] = []
+    var kingBeatSteps: [[Any]] = []
+    var doubleStep: [Any] = [false, -1]
     
     var dynamicChecker: [[Int]] = []
+    var dynamicKingChecker: [[Any]] = []
     
     let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     let ud = UserDefaults.standard

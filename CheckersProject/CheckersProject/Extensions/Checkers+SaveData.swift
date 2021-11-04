@@ -58,9 +58,13 @@ extension Checkers {
                 position.cellTag = cell.tag
                 cell.subviews.forEach { checker in
                     position.checkerTag = checker.tag
+                    position.kingChecker = 0
                 }
                 cellAndChecker.append(position)
             }
+        }
+        if !kingCheckers.isEmpty {
+            findKingCheckers()
         }
         let data = try? NSKeyedArchiver.archivedData(withRootObject: cellAndChecker, requiringSecureCoding: true)
         try? data?.write(to: URL.saveURL(pathComponent: KeysUserDefaults.saveBoard.rawValue))
@@ -78,6 +82,7 @@ extension Checkers {
         guard let data = FileManager.default.contents(atPath: URL.saveURL(pathComponent:  KeysUserDefaults.saveBoard.rawValue).absoluteString.replacingOccurrences(of: "file://", with: "")),
               let object = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [CheckerInfo] else { return }
         self.cellAndChecker = object
+        setKingCheckers()
     }
     
     func removeSavePositions() {
@@ -85,6 +90,24 @@ extension Checkers {
             try FileManager.default.removeItem(at: URL.saveURL(pathComponent: KeysUserDefaults.saveBoard.rawValue))
         } catch {
             print()
+        }
+    }
+    
+    func findKingCheckers() {
+        kingCheckers.forEach { king in
+            cellAndChecker.first { checker in
+                guard king == checker.checkerTag else { return false }
+                checker.kingChecker = 1
+                return true
+            }
+        }
+    }
+    
+    func setKingCheckers() {
+        cellAndChecker.forEach { king in
+            if king.kingChecker == 1 {
+                kingCheckers.append(king.checkerTag ?? -1)
+            }
         }
     }
     

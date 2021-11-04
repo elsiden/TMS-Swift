@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F107613A2732844A00955329 /* Checkers+KingMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10761392732844A00955329 /* Checkers+KingMove.swift */; };
 		F121603726E662D200A92244 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F121603626E662D200A92244 /* Player.swift */; };
 		F12502F126C68590003D2F66 /* UIFont+CoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12502F026C68590003D2F66 /* UIFont+CoreKit.swift */; };
 		F12502F426C6EA15003D2F66 /* Checkers+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12502F326C6EA15003D2F66 /* Checkers+Create.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F10761392732844A00955329 /* Checkers+KingMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+KingMove.swift"; sourceTree = "<group>"; };
 		F121603626E662D200A92244 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F12502F026C68590003D2F66 /* UIFont+CoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+CoreKit.swift"; sourceTree = "<group>"; };
 		F12502F326C6EA15003D2F66 /* Checkers+Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkers+Create.swift"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				F173C1A226DE91BF0021BB25 /* Checkers+Date.swift */,
 				F173C1A426DEAC7D0021BB25 /* UIView+CoreKit.swift */,
 				F19354EA26E541820014B405 /* Checkers+Appearance.swift */,
+				F10761392732844A00955329 /* Checkers+KingMove.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				F19E4E4726D14E1000394452 /* CustomSettingsView+CollectionView.swift in Sources */,
 				F1607FFB26C591CD00377748 /* SceneDelegate.swift in Sources */,
 				F19354E926E52D450014B405 /* CustomPlayersNameAlert.swift in Sources */,
+				F107613A2732844A00955329 /* Checkers+KingMove.swift in Sources */,
 				F19354EB26E541820014B405 /* Checkers+Appearance.swift in Sources */,
 				F1618FFA26DC435C00F6CF63 /* Checkers+Move.swift in Sources */,
 				F173C1A326DE91BF0021BB25 /* Checkers+Date.swift in Sources */,
