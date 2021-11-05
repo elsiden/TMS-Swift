@@ -122,14 +122,26 @@ extension Checkers {
             if !cell.subviews.isEmpty {
                 cell.subviews.forEach { checker in
                     for value in kingCheckers {
-                        if value == checker.tag {
-                            possibleStepsForUpperLeftKing(tag: cell.tag)
-                            possibleStepsForUpperRightKing(tag: cell.tag)
-                            possibleStepsForLowerLeftKing(tag: cell.tag)
-                            possibleStepsForLowerRightKing(tag: cell.tag)
-                            dynamicKingChecker.append([possibleSteps, checker.tag])
-                            possibleSteps.removeAll()
-                            break
+                        if whoStep == .white {
+                            if value == checker.tag && value >= 12 && value <= 23 {
+                                possibleStepsForUpperLeftKing(tag: cell.tag)
+                                possibleStepsForUpperRightKing(tag: cell.tag)
+                                possibleStepsForLowerLeftKing(tag: cell.tag)
+                                possibleStepsForLowerRightKing(tag: cell.tag)
+                                dynamicKingChecker.append([possibleSteps, checker.tag])
+                                possibleSteps.removeAll()
+                                break
+                            }
+                        } else {
+                            if value == checker.tag && value >= 0 && value <= 11 {
+                                possibleStepsForUpperLeftKing(tag: cell.tag)
+                                possibleStepsForUpperRightKing(tag: cell.tag)
+                                possibleStepsForLowerLeftKing(tag: cell.tag)
+                                possibleStepsForLowerRightKing(tag: cell.tag)
+                                dynamicKingChecker.append([possibleSteps, checker.tag])
+                                possibleSteps.removeAll()
+                                break
+                            }
                         }
                     }
                 }
@@ -199,23 +211,25 @@ extension Checkers {
             return contains
         }
         
-//        kingBeatSteps.forEach { value in
-//            var cellBeat = value[2] as! Array<Int>
-//            var contains: Bool = false
-//            value[2] = cellBeat.filter {
-//                let curCell = $0
-//                contains = false
-//                chessboard.subviews.forEach { cell in
-//                    if cell.tag != 0 && cell.tag == curCell {
-//                        if cell.subviews.isEmpty {
-//                            contains = true
-//                        }
-//                        return
-//                    }
-//                }
-//                return contains
-//            }
-//        }
+        var count: Int = 0
+        for value in kingBeatSteps {
+            var cellBeat = value[2] as! Array<Int>
+            var contains: Bool = false
+            cellBeat = cellBeat.filter { curCell in
+                contains = false
+                chessboard.subviews.forEach { cell in
+                    if cell.tag != 0 && cell.tag == curCell {
+                        if cell.subviews.isEmpty {
+                            contains = true
+                        }
+                        return
+                    }
+                }
+                return contains
+            }
+            kingBeatSteps[count][2] = cellBeat
+            count += 1
+        }
 //        print(kingBeatSteps)
     }
     
@@ -240,6 +254,16 @@ extension Checkers {
         
         kingBeatSteps.append([chkTag, start, possibleSteps, enemyCell])
         possibleSteps.removeAll()
+    }
+    
+    func filterForDoubleStepKing(where checkerTag: Int) -> [[Any]] {
+        return kingBeatSteps.filter { value in
+            if value[0] as! Int == checkerTag {
+                return true
+            } else {
+                return false
+            }
+        }
     }
     
     func checkPossibleSteps(where possSt: [Int], start: Int, enemyCell: Int) -> Int {

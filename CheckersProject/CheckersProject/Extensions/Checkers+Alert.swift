@@ -16,4 +16,16 @@ extension Checkers {
         
         return alert
     }
+    
+    func endGame(where winner: CheckersColor) {
+        let whoWin = winner == .white ? "White" : "Black"
+        stopTimer()
+        presentAlertController(with: "\(whoWin) wins", message: "Do you want to start a new game?", actions: UIAlertAction(title: "Yes", style: .default, handler: { _ in
+            self.removeDataFromUserDefaults()
+            self.removeSavePositions()
+            self.createNewGame()
+        }), UIAlertAction(title: "No", style: .cancel, handler: { _ in
+            
+        }))
+    }
 }

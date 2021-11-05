@@ -264,8 +264,23 @@ extension Checkers {
         fillDynamicCheckers()
         fillBeatPositions()
         fillBeatSteps()
-        fillDynamicKingCheckers()
-        fillBeatKingPositions()
-        fillKingBeatSteps()
+        if !kingCheckers.isEmpty {
+            fillDynamicKingCheckers()
+            if !dynamicKingChecker.isEmpty {
+                fillBeatKingPositions()
+                fillKingBeatSteps()
+                deleteEqualFromBeatSteps()
+            }
+        }
+    }
+    
+    func deleteEqualFromBeatSteps() {
+        kingBeatSteps.forEach { king in
+            beatSteps = beatSteps.filter({ basic in
+                if king[0] as! Int == basic[0] {
+                    return false
+                } else { return true }
+            })
+        }
     }
 }

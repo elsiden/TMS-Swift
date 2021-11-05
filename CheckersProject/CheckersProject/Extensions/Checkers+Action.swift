@@ -107,6 +107,40 @@ extension Checkers: UIGestureRecognizerDelegate {
         }
     }
     
+    func checkEndPossibleSteps() {
+        if beatSteps.isEmpty && kingBeatSteps.isEmpty {
+            var check: Bool = false
+            
+            if whoStep == .white {
+                for chckr in cellAndChecker {
+                    if chckr.checkerTag ?? 0 > 11 && !check {
+                        possibleSteps(tag: chckr.cellTag ?? 0)
+                        possibleSteps.forEach { possSt in
+                            guard chessboard.subviews.first(where: { possSt == $0.tag && $0.subviews.isEmpty }) != nil else { return }
+                            check = true
+                        }
+                    } else if check { break }
+                }
+                if !check {
+                    resumeGame = !resumeGame
+                }
+            } else {
+                for chckr in cellAndChecker {
+                    if chckr.checkerTag ?? 13 < 12 && !check {
+                        possibleSteps(tag: chckr.cellTag ?? 0)
+                        possibleSteps.forEach { possSt in
+                            guard chessboard.subviews.first(where: { possSt == $0.tag && $0.subviews.isEmpty }) != nil else { return }
+                            check = true
+                        }
+                    } else if check { break }
+                }
+                if !check {
+                    resumeGame = !resumeGame
+                }
+            }
+        }
+    }
+    
     @objc func longPressGesture(_ sender: UILongPressGestureRecognizer) {
         var step: Bool = false
         var steps: [Int] = []
@@ -269,22 +303,15 @@ extension Checkers: UIGestureRecognizerDelegate {
                 checkEndGame()
                                 
                 if !resumeGame {
-                    let winner = whoStep == .white ? "White" : "Black"
-                    stopTimer()
-                    presentAlertController(with: "\(winner) wins", message: "Do you want to start a new game?", actions: UIAlertAction(title: "Yes", style: .default, handler: { _ in
-                        self.removeDataFromUserDefaults()
-                        self.removeSavePositions()
-                        self.createNewGame()
-                    }), UIAlertAction(title: "No", style: .cancel, handler: { _ in
-                        
-                    }))
+                    endGame(where: whoStep)
                 } else {
                     if doubleStep[0] as! Bool {
                         fillBeatsAction()
                         beatSteps = filterForDoubleStep(where: doubleStep[1] as! Int)
+                        kingBeatSteps = filterForDoubleStepKing(where: doubleStep[1] as! Int)
                     }
                     
-                    if beatSteps.isEmpty {
+                    if beatSteps.isEmpty && kingBeatSteps.isEmpty {
                         doubleStep[0] = false
                         doubleStep[1] = -1
                         whoStep = whoStep == .white ? .black : .white
@@ -293,6 +320,11 @@ extension Checkers: UIGestureRecognizerDelegate {
                         whoStepLabel.text = whoStepLabel.text == players[0].playerName ? players[1].playerName : players[0].playerName
                         
                         fillBeatsAction()
+                        checkEndPossibleSteps()
+                        if !resumeGame {
+                            let winner: CheckersColor = whoStep == .white ? .black : .white
+                            endGame(where: winner)
+                        }
                     }
                 }
             }
